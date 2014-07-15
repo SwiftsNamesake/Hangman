@@ -170,7 +170,6 @@ class Hangman:
 			self.win()
 		elif result == 'LOSE':
 			self.lose()
-			self.bla = 'six'
 
 
 	def win(self):
