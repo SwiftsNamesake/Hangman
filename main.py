@@ -27,7 +27,6 @@
 
 
 import tkinter as tk
-import wave
 
 from graphics import Graphics
 from logic import Logic
@@ -35,6 +34,7 @@ from string import ascii_letters
 from collections import namedtuple
 from random import choice
 from pygame import mixer
+from os import listdir
 
 from inspect import currentframe, getouterframes, getframeinfo
 
@@ -46,6 +46,11 @@ class Hangman:
 		self.size = Graphics.Size(650, 650)
 		self.root = self.createWindow(self.size)
 
+		# Dictionaries
+		# TODO: Move to separate method
+		#self.wordLists = { url : [pair.split('|') for pair in open('data/%s' % url, 'r').read().split('\n')] for url in listdir('data') if url.split('.')[-1] == 'txt' }
+		self.wordLists = [ 'data/%s' % url for url in listdir('data') if url.split('.')[-1] == 'txt' ]
+		
 		# Menus
 		self.menubar = self.createMenus()
 
@@ -91,7 +96,10 @@ class Hangman:
 
 	def createMenus(self):
 		''' '''
+
 		# TODO: Nested dict menu definition (?)
+		# TODO: Desperately needs a clean-up
+
 		menubar = tk.Menu(self.root)
 
 		menubar.add_command(label='New', command=lambda: print('Not implemented'))
@@ -99,7 +107,26 @@ class Hangman:
 		# Settings
 		settings = tk.Menu(menubar, tearoff=0)
 		settings.add_command(label='Difficulty', command=lambda: print('Moderate'))
-		settings.add_command(label='Language', command=lambda: print('English for now'))
+		#settings.add_command(label='Language', command=lambda: print('English for now'))
+		languages = tk.Menu(settings, tearoff=0)
+		languages.vars = {}
+		
+		for name in self.wordLists:
+			languages.vars.update(**{ name: tk.BooleanVar() })
+			languages.add_checkbutton(label=name, onvalue=True, offvalue=False, variable=languages.vars[name])
+				
+			def closure(var, fn):
+				def callback(*args):
+					print(var.get())
+					if var.get():
+						print('Changing dictionary to %s' % fn)
+						self.wordFeed = self.createWordFeed(fn)
+						self.win() # Use win() method to restart for now
+				return callback
+			languages.vars[name].trace('w', closure(languages.vars[name], name))
+
+		settings.add_cascade(label='Language', menu=languages)
+
 		menubar.add_cascade(label='Settings', menu=settings)
 
 		menubar.add_command(label='About', command=lambda: print('\n{0}\nHangman\nJonatan H Sundqvist\nJuly 2014\n{0}\n'.format('-'*30))) # About box
@@ -160,6 +187,9 @@ class Hangman:
 		#return namedtuple('Effects', ['lose'])(wave.open('data/hangman.wav'))
 
 
+	# TODO: Research Python annotation syntax
+	# TOOD: Check if ST3 has support for the same
+	#def guess(self : str, letter : str) -> None:
 	def guess(self, letter):
 		''' '''
 		result = self.logic.guess(letter)
