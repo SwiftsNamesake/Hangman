@@ -36,6 +36,8 @@ from collections import namedtuple
 from random import choice
 from pygame import mixer
 
+from inspect import currentframe, getouterframes, getframeinfo
+
 
 class Hangman:
 	''' '''
@@ -192,8 +194,8 @@ class Hangman:
 
 
 	def restart(self):
-		''' '''
-		print('\n{0}\n{1:^40}\n{0}\n'.format('-'*40, 'NEW GAME'))
+		'''  '''
+		self.log('\n{0}\n{1:^40}\n{0}\n'.format('-'*40, 'NEW GAME'), identify=False)
 		self.graphics.showHint('It starts with a letter.')
 
 		self.word, self.hint = next(self.wordFeed)
@@ -216,10 +218,12 @@ class Hangman:
 			yield choice(words).split('|') # Word|Hint
 
 
-	def log(self, *args, **kwargs):
+	def log(self, *args, identify=True, **kwargs):
 		''' '''
 		DEBUG = True # TODO: Make instance-setting
-		if DEBUG: print('(Hangman) ', *args, **kwargs)
+		if DEBUG:
+			prefix = '(Hangman) [%s] ' % getouterframes(currentframe())[1][2] if identify else ''
+			print(prefix, *args, **kwargs)
 
 
 

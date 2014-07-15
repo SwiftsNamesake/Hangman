@@ -23,7 +23,7 @@
 
 import tkinter as tk
 
-from utilities import rectangle, rotatedRect
+from utilities import rectangle, rotatedRect, Rect
 from collections import namedtuple
 from math import radians
 from string import ascii_uppercase
@@ -45,9 +45,10 @@ class Graphics:
 		self.chances = len(self.order)
 
 		# Styling
-		self.wordDefaults 	  = {'anchor': tk.NW, 'fill': '#EE2233', 'font': 'Lucida 20'} 	# Default formatting for word
-		self.alphabetDefaults = {'anchor': tk.SW, 'fill': '#000', 'font': 'Lucida 10 bold'} # Default formatting for alphabet letters
-		self.hintDefaults 	  = {'anchor': tk.NW, 'fill': '#000', 'font': 'Helvetica 10'} 	# Default formatting for hints
+		# TODO: Extract defaults (?)
+		self.wordDefaults 	  = {'anchor': tk.NW, 'width': self.size.width, 'fill': '#EE2233', 'font': 'Lucida 20'} 	# Default formatting for word
+		self.alphabetDefaults = {'anchor': tk.SW, 'width': self.size.width, 'fill': '#000', 'font': 'Lucida 10 bold'} 	# Default formatting for alphabet letters
+		self.hintDefaults 	  = {'anchor': tk.NW, 'width': self.size.width, 'fill': '#000', 'font': 'Helvetica 10'} 	# Default formatting for hints
 
 		# 
 		self.parts = self.createParts()			# Initially hidden
@@ -58,6 +59,9 @@ class Graphics:
 		# Word
 		self.word = self.createWord('', (20, 20), **self.wordDefaults) # Initially empty
 		self.hint = self.createWord('', (20, self.canvas.bbox(self.word.id)[3]+5), **self.hintDefaults)
+		
+		# TODO: Wrapping, adapting to Canvas size
+		# TODO: Extract layout parameters (no hard-coded values)
 
 
 	def play(self, word):
@@ -228,6 +232,13 @@ class Graphics:
 		self.word._replace(word=word) # Yuck, an underscore
 		self.configureWord(text=word) # Insert spaces between letters
 
+		# Adjust hint position
+		# TODO: Extract to separate method (?)
+		box = Rect(*self.canvas.bbox(self.word.id))
+		self.canvas.coords(self.hint.id, *(box.left, box.bottom+5))
+		#self.canvas.move(self.hint.id, 0, 20)
+
+
 
 	# Auxiliary
 	def reset(self):
@@ -253,7 +264,8 @@ class Graphics:
 	def log(self, *args, **kwargs):
 		''' '''
 		DEBUG = True # TODO: Make instance-setting
-		if DEBUG: print('(Graphics) ', *args, **kwargs)
+		if DEBUG:
+			print('(Graphics) ', *args, **kwargs)
 
 
 
