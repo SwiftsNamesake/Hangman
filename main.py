@@ -203,14 +203,14 @@ class Hangman:
 		self.graphics.play(str(self.logic))
 
 		self.validState = True # Ready to accept guesses again
-		self.willGitWork = 'No fucking clue'
+
 
 	def createWordFeed(self, dictionary):
 		''' '''
 		# TODO: Give class a reference to words (?)
 		# NOTE: Currently, the entire file is kept in memory
 		with open(dictionary, 'r') as wordFile:
-			words = wordFile.read().split('\n') 
+			words = wordFile.read().split('\n')
 		while True:
 			#yield choice('treasury|laconic|forboding'.split('|'))
 			yield choice(words).split('|') # Word|Hint
