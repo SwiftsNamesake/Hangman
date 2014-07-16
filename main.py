@@ -117,9 +117,8 @@ class Hangman:
 				
 			def closure(var, fn):
 				def callback(*args):
-					print(var.get())
 					if var.get():
-						print('Changing dictionary to %s' % fn)
+						self.log('Changing dictionary to %s' % fn)
 						self.wordFeed = self.createWordFeed(fn)
 						self.win() # Use win() method to restart for now
 				return callback
@@ -129,7 +128,7 @@ class Hangman:
 
 		menubar.add_cascade(label='Settings', menu=settings)
 
-		menubar.add_command(label='About', command=lambda: print('\n{0}\nHangman\nJonatan H Sundqvist\nJuly 2014\n{0}\n'.format('-'*30))) # About box
+		menubar.add_command(label='About', command=lambda: self.log('\n{0}\nHangman\nJonatan H Sundqvist\nJuly 2014\n{0}\n'.format('-'*30), identify=False)) # About box
 	
 		# Debugging
 		def onToggle(variable, message): return lambda *args: print(message % ['dis', 'en'][variable.get()])

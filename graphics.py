@@ -46,9 +46,9 @@ class Graphics:
 
 		# Styling
 		# TODO: Extract defaults (?)
-		self.wordDefaults 	  = {'anchor': tk.NW, 'width': self.size.width, 'fill': '#EE2233', 'font': 'Lucida 20'} 	# Default formatting for word
-		self.alphabetDefaults = {'anchor': tk.SW, 'width': self.size.width, 'fill': '#000', 'font': 'Lucida 10 bold'} 	# Default formatting for alphabet letters
-		self.hintDefaults 	  = {'anchor': tk.NW, 'width': self.size.width, 'fill': '#000', 'font': 'Helvetica 10'} 	# Default formatting for hints
+		self.wordDefaults 	  = {'anchor': tk.NW, 'width': self.size.width-20, 'fill': '#EE2233', 'font': 'Lucida 20'} 	# Default formatting for word
+		self.alphabetDefaults = {'anchor': tk.SW, 'width': self.size.width-20, 'fill': '#000', 'font': 'Lucida 10 bold'} 	# Default formatting for alphabet letters
+		self.hintDefaults 	  = {'anchor': tk.NW, 'width': self.size.width-20, 'fill': '#000', 'font': 'Helvetica 10'} 	# Default formatting for hints
 
 		# 
 		self.parts = self.createParts()			# Initially hidden
