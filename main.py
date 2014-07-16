@@ -109,20 +109,23 @@ class Hangman:
 		settings.add_command(label='Difficulty', command=lambda: print('Moderate'))
 		#settings.add_command(label='Language', command=lambda: print('English for now'))
 		languages = tk.Menu(settings, tearoff=0)
-		languages.vars = {}
+		#languages.vars = {}
+		languages.var = tk.IntVar()
 		
-		for name in self.wordLists:
-			languages.vars.update(**{ name: tk.BooleanVar() })
-			languages.add_checkbutton(label=name, onvalue=True, offvalue=False, variable=languages.vars[name])
-				
-			def closure(var, fn):
+		for N, name in enumerate(self.wordLists):
+			#languages.vars.update(**{ name: tk.BooleanVar() })
+			# languages.add_checkbutton(label=name, onvalue=True, offvalue=False, variable=languages.vars[name])
+			
+			#def closure(var, fn):
+			def closure(fn):
 				def callback(*args):
-					if var.get():
-						self.log('Changing dictionary to %s' % fn)
-						self.wordFeed = self.createWordFeed(fn)
-						self.win() # Use win() method to restart for now
+					self.log('Changing dictionary to %s' % fn)
+					self.wordFeed = self.createWordFeed(fn)
+					self.win() # Use win() method to restart for now
 				return callback
-			languages.vars[name].trace('w', closure(languages.vars[name], name))
+
+			languages.add_radiobutton(label=name, var=languages.var, value=N, command=closure(name))
+			#languages.vars[name].trace('w', closure(languages.vars[name], name))
 
 		settings.add_cascade(label='Language', menu=languages)
 
