@@ -11,7 +11,7 @@
 #		 - 
 
 
-import tkinter
+import tkinter as tk
 
 from collections import namedtuple
 from math import sin, cos
@@ -66,7 +66,7 @@ class Text:
 		self.pos = pos
 		self.style = style
 
-		self.id = canvas.create_text(pos, **options) # Canvas item id
+		self.id = canvas.create_text(pos, text=text, **style) # Canvas item id
 		self.box = Rect(*self.canvas.bbox(self.id))  # Bounding box
 
 
@@ -102,5 +102,31 @@ class Text:
 		self.box = Rect(*self.canvas.bbox(self.id))
 
 
+	def animate(self, root, duration, dt, **kwargs):
+		''' Animates any number of smooth properties '''
+		#colour = 255, 255, 255
+		# TODO: Use generator (?)
+		I = 255 # Colour intensity
+		def onAnimate():
+			nonlocal I
+			self.setStyle(fill=('#%s' % (('%02x' % int(I))*3)))
+			I -= (255 * dt / duration)
+			if I >= 0: root.after(dt, onAnimate)
+		onAnimate()
+
+
 	def moveTo(self, x=None, y=None, anchor='NW'):
 		pass
+
+
+if __name__ == '__main__':
+	# Text
+	root = tk.Tk()
+	root.geometry('200x200')
+	cvs = tk.Canvas(root, background='white')
+	cvs.pack()
+
+	text = Text(cvs, 'Fading...', (10, 10), { 'anchor': tk.NW, 'font': 'Helvetica 12' })
+	text.animate(root, 6000, 1000//30)
+
+	root.mainloop()
