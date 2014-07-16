@@ -5,7 +5,7 @@
 #
 
 # TODO | - Dictionary databases (sqlite3, JSON?)
-#		 - Validate input, words (length, characters, 26 - unique letters > chances,  etc.)
+#		 - Validate input, words (length, characters, 26 - Unique ≥ Chances,  etc.)
 #		 - Complete and thorough documentation (tutorial, readme?)
 #		 - Refactor
 #		 - Create class (...)
@@ -49,7 +49,7 @@ class Hangman:
 		# Dictionaries
 		# TODO: Move to separate method
 		#self.wordLists = { url : [pair.split('|') for pair in open('data/%s' % url, 'r').read().split('\n')] for url in listdir('data') if url.split('.')[-1] == 'txt' }
-		self.wordLists = [ 'data/%s' % url for url in listdir('data') if url.split('.')[-1] == 'txt' ]
+		self.wordLists = [ 'data/%s' % url for url in listdir('data') if url.endswith('.txt') ]
 		
 		# Menus
 		self.menubar = self.createMenus()
@@ -74,7 +74,7 @@ class Hangman:
 		mixer.init()
 		self.effects = self.loadAudio()
 
-		# 
+		# Internal settings
 		self.validState = False # Not ready to accept guesses
 
 

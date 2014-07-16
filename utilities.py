@@ -102,17 +102,67 @@ class Text:
 		self.box = Rect(*self.canvas.bbox(self.id))
 
 
-	def animate(self, root, duration, dt, **kwargs):
-		''' Animates any number of smooth properties '''
+	def animate(self, root, duration, dt, **properties):
+		''' Animates any number of numeric properties '''
 		#colour = 255, 255, 255
-		# TODO: Use generator (?)
-		I = 255 # Colour intensity
-		def onAnimate():
-			nonlocal I
-			self.setStyle(fill=('#%s' % (('%02x' % int(I))*3)))
-			I -= (255 * dt / duration)
-			if I >= 0: root.after(dt, onAnimate)
-		onAnimate()
+		
+		# 
+
+		# TOOD: Sophisticated argument conversions (eg. allowing hex strings for colour)
+		# TODO: Animate properties other than Canvas styles (eg. size, position)
+		# TODO: Use generators (?)
+		# TODO: Root argument necessary (?)
+		# TODO: Non-numeric ranges
+		# TODO: Disallow multiple properties (?)
+		# TODO: Non-equal durations
+		
+		# I = 255 # Colour intensity
+
+		nFrames = duration // dt
+		nElapsed = 0
+
+		def createFeed(prop, rng):
+			''' Generic property iterators '''
+			# TODO: Convert to int (?)
+			delta = (rng[1] - rng[0])/nFrames
+			for frame in range(nFrames):
+				yield int(rng[0]+frame*delta)
+
+		def specialized(prop, rng):
+			''' Creates specialized property iterators '''
+			return {
+				'width': 0,
+				'height': 0,
+				'fill': 0
+			}[prop]
+
+		feeds = { prop: createFeed(prop, rng) for prop, rng in properties.items() }
+
+		# NOTE
+		# I've made a mess of this.
+		# Figure out how to use generators
+		# as callbacks when clear headed.
+		def nextFrame():
+			
+			nonlocal nFrames
+			nonlocal nElapsed
+
+			for frame in range(nFrames):
+				self.setStyle(**{ prop: next(feed) for prop, feed in feeds.items() })
+				yield
+		
+		def animate():
+			for frame in nextFrame():
+				root.after(dt, animate)
+
+			#if nElapsed < nFrames: root.after(dt, onAnimate)
+
+			# nonlocal I
+			# self.setStyle(fill=('#%s' % (('%02x' % int(I))*3)))
+			# I -= (255 * dt / duration)
+			# if I >= 0: root.after(dt, onAnimate)
+		#onAnimate()
+		animate()
 
 
 	def moveTo(self, x=None, y=None, anchor='NW'):
@@ -127,6 +177,6 @@ if __name__ == '__main__':
 	cvs.pack()
 
 	text = Text(cvs, 'Fading...', (10, 10), { 'anchor': tk.NW, 'font': 'Helvetica 12' })
-	text.animate(root, 6000, 1000//30)
+	text.animate(root, 4000, 1000//30, width=(text.width(), 20))
 
 	root.mainloop()
