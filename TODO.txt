@@ -1,9 +1,9 @@
-# TODO: Move to separate method
-# TODO: Nested dict menu definition (?)
-# TODO: Desperately needs a clean-up
-# TODO: Make sure guesses can't be made in a transitory state
-# TODO: Research Python annotation syntax
-# TODO: Extract restart logic (✓)
-# TODO: Extract restart logic (✓)
-# TODO: Show correct word before restarting
-# TODO: Give class a reference to words (?)
+[49] Move to separate method
+[99] Nested dict menu definition (?)
+[100] Desperately needs a clean-up
+[163] Make sure guesses can't be made in a transitory state
+[188] Research Python annotation syntax
+[207] Extract restart logic (✓)
+[216] Extract restart logic (✓)
+[217] Show correct word before restarting
+[240] Give class a reference to words (?)
