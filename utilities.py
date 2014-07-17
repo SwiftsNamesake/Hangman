@@ -58,7 +58,7 @@ def updateTODOList():
 	paths = [path for path in listdir() if path.endswith('.py')]
 	print('Extracted TODOs from %r' % paths)
 	for fn in paths:
-		extractTODOs(fn, 'TODO.txt', append=True)
+		extractTODOs(fn, 'TODO.md', append=True)
 
 
 class Text:
