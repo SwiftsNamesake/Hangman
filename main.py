@@ -27,6 +27,7 @@
 #		 	-- Making it less fragile by storing location of each asset type
 #		 - Look into class decorators (cf. logging)
 #		 - Look into function annotations (optional type checking?)
+#		 	-- cf. inspect.getarcspec
 #		 - PyQT (?)
 
 # SPEC | -
@@ -41,7 +42,7 @@ from graphics import Graphics
 from logic import Logic
 from PIL import Image, ImageTk		# Loading png icons to display alongside dictionaries (NOTE: 3rd party, bundle with game?)
 
-from sys import exit # Closing the console
+from sys import exit 				# Closing the console (only quits the intepreter?)
 
 from string import ascii_letters	# Character set
 from collections import namedtuple	# Probably not needed anymore (moved to utilities.py)
@@ -119,7 +120,7 @@ class Hangman:
 		menubar = tk.Menu(self.root)
 
 		# New game
-		menubar.add_command(label='New', command=lambda: print('Not implemented'))
+		menubar.add_command(label='New', command=self.win)
 
 		# Settings
 		settings = tk.Menu(menubar, tearoff=0)
