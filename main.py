@@ -8,14 +8,16 @@
 #		 - Validate input, words (length, characters, 26 - Unique ≥ Chances,  etc.)
 #		 - Complete and thorough documentation (tutorial, rule book, readme?)
 #		 - Refactor
-#		 - Create class (...)
-#		 - Create input class (?)
+#		 - Think about overall architecture (cf. MVC)
+#		 	-- Create class (...)
+#		 	-- Create input class (?)
 #		 - Validate input (annotations?)
 #		 - Optional verbose logging (...)
 #		 - Disable console in release version
 #		 - Hints (...)
 #		 - Proper UI, menus (...)
-#		 - Timers, progress bars (?)
+#		 	-- Languages flags
+#		 	-- Timers, progress bars (?)
 #		 - Add quit method (sys.exit?)
 #		 - Statistics, difficulty
 #		 - Decide if chances should be determined by graphics
@@ -23,7 +25,6 @@
 #		 - Learn Git, move Hangman class to Hangman.py (...)
 #		 - Look into class decorators (cf. logging)
 #		 - Look into function annotations (optional type checking?)
-#		 - Think about overall architecture (cf. MVC)
 #		 - PyQT (?)
 
 # SPEC | -
@@ -190,7 +191,7 @@ class Hangman:
 
 	def loadAudio(self):
 		''' '''
-		return namedtuple('Effects', ['lose', 'win'])(*map(mixer.Sound, ['data/strangled.wav', 'data/ding.wav']))
+		return namedtuple('Effects', ['lose', 'win'])(*map(mixer.Sound, ['data/audio/strangled.wav', 'data/audio/ding.wav']))
 		#return namedtuple('Effects', ['lose'])(wave.open('data/hangman.wav'))
 
 
