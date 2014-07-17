@@ -48,8 +48,8 @@ class Hangman:
 
 		# Dictionaries
 		# TODO: Move to separate method
-		#self.wordLists = { url : [pair.split('|') for pair in open('data/%s' % url, 'r').read().split('\n')] for url in listdir('data') if url.split('.')[-1] == 'txt' }
-		self.wordLists = [ 'data/%s' % url for url in listdir('data') if url.endswith('.txt') ]
+		#self.wordLists = { uri : [pair.split('|') for pair in open('data/%s' % uri, 'r').read().split('\n')] for uri in listdir('data') if uri.split('.')[-1] == 'txt' }
+		self.wordLists = [ 'data/%s' % uri for uri in listdir('data') if uri.endswith('.txt') ] # Dictionary file URIs
 		
 		# Menus
 		self.menubar = self.createMenus()
@@ -60,7 +60,7 @@ class Hangman:
 		# Game play
 		self.graphics = Graphics(self.root, self.size.width, self.size.height)
 		self.logic = Logic(self.graphics.chances)
-		self.wordFeed = self.createWordFeed('data/en_dict_thetoohardforyouversion.txt') # TODO: Make dictionaries appear in menu automatically
+		self.wordFeed = self.createWordFeed('data/en_dict_thetoohardforyouversion.txt') # TODO: Make dictionaries appear in menu automatically (...)
 
 		self.word = None
 		self.hint = None
