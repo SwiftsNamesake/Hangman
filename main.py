@@ -23,6 +23,8 @@
 #		 - Decide if chances should be determined by graphics
 #		 - Loading settings (JSON?)
 #		 - Learn Git, move Hangman class to Hangman.py (...)
+#		 - Improve asset management
+#		 	-- Making it less fragile by storing location of each asset type
 #		 - Look into class decorators (cf. logging)
 #		 - Look into function annotations (optional type checking?)
 #		 - PyQT (?)
@@ -35,11 +37,12 @@ import tkinter as tk # Window creation and event handling
 
 from graphics import Graphics
 from logic import Logic
+from PIL import Image, ImageTk		# Loading png icons to display alongside dictionaries (NOTE: 3rd party, bundle with game?)
 
 from string import ascii_letters	# Character set
 from collections import namedtuple	# Probably not needed anymore (moved to utilities.py)
 from random import choice			# Choosing words (should eventually be superseded by database queries)
-from pygame import mixer			# Audio (NOTE: Not portable, bundle with game?)
+from pygame import mixer			# Audio (NOTE: 3rd party, bundle with game?)
 from os import listdir 				# Finding and loading dictionaries
 
 from inspect import currentframe, getouterframes, getframeinfo # Line numbers (for logging)
@@ -55,7 +58,7 @@ class Hangman:
 		# Dictionaries
 		# TODO: Move to separate method
 		#self.wordLists = { uri : [pair.split('|') for pair in open('data/%s' % uri, 'r').read().split('\n')] for uri in listdir('data') if uri.split('.')[-1] == 'txt' }
-		self.wordLists = [ 'data/%s' % uri for uri in listdir('data') if uri.endswith('.txt') ] # Dictionary file URIs
+		self.wordLists = [ 'data/dicts/%s' % uri for uri in listdir('data/dicts') if uri.endswith('.txt') ] # Dictionary file URIs
 		
 		# Menus
 		self.menubar = self.createMenus()
@@ -66,7 +69,7 @@ class Hangman:
 		# Game play
 		self.graphics = Graphics(self.root, self.size.width, self.size.height)
 		self.logic = Logic(self.graphics.chances)
-		self.wordFeed = self.createWordFeed('data/en_dict_thetoohardforyouversion.txt') # TODO: Make dictionaries appear in menu automatically (...)
+		self.wordFeed = self.createWordFeed('data/dicts/en_dict_thetoohardforyouversion.txt') # TODO: Make dictionaries appear in menu automatically (...)
 
 		self.word = None
 		self.hint = None
@@ -117,7 +120,9 @@ class Hangman:
 		languages = tk.Menu(settings, tearoff=0)
 		#languages.vars = {}
 		languages.var = tk.IntVar()
-		
+		languages.image = ImageTk.PhotoImage(Image.open('data/flags/UK.png'))
+		print(languages.image)
+
 		for N, name in enumerate(self.wordLists):
 			#languages.vars.update(**{ name: tk.BooleanVar() })
 			# languages.add_checkbutton(label=name, onvalue=True, offvalue=False, variable=languages.vars[name])
@@ -130,7 +135,7 @@ class Hangman:
 					self.win() # Use win() method to restart for now
 				return callback
 
-			languages.add_radiobutton(label=name, var=languages.var, value=N, command=closure(name))
+			languages.add_radiobutton(label=name, image=languages.image, var=languages.var, value=N, command=closure(name))
 			#languages.vars[name].trace('w', closure(languages.vars[name], name))
 
 		settings.add_cascade(label='Language', menu=languages)
