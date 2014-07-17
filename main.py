@@ -6,7 +6,7 @@
 
 # TODO | - Dictionary databases (sqlite3, JSON?)
 #		 - Validate input, words (length, characters, 26 - Unique ≥ Chances,  etc.)
-#		 - Complete and thorough documentation (tutorial, readme?)
+#		 - Complete and thorough documentation (tutorial, rule book, readme?)
 #		 - Refactor
 #		 - Create class (...)
 #		 - Create input class (?)
@@ -20,23 +20,26 @@
 #		 - Statistics, difficulty
 #		 - Decide if chances should be determined by graphics
 #		 - Loading settings (JSON?)
-#		 - Learn Git, move Hangman class to Hangman.py
+#		 - Learn Git, move Hangman class to Hangman.py (...)
+#		 - Look into class decorators (cf. logging)
+#		 - Look into function annotations (optional type checking+)
 
 # SPEC | -
 #		 - 
 
 
-import tkinter as tk
+import tkinter as tk # Window creation and event handling
 
 from graphics import Graphics
 from logic import Logic
-from string import ascii_letters
-from collections import namedtuple
-from random import choice
-from pygame import mixer
-from os import listdir
 
-from inspect import currentframe, getouterframes, getframeinfo
+from string import ascii_letters	# Character set
+from collections import namedtuple	# Probably not needed anymore (moved to utilities.py)
+from random import choice			# Choosing words (should eventually be superseded by database queries)
+from pygame import mixer			# Audio (NOTE: Not portable, bundle with game?)
+from os import listdir 				# Finding and loading dictionaries
+
+from inspect import currentframe, getouterframes, getframeinfo # Line numbers (for logging)
 
 
 class Hangman:
@@ -198,8 +201,11 @@ class Hangman:
 		
 		self.log('Guessing %s. The guess is a %s' % (letter, result))
 
+		# TODO: Clean up the 'switch' logic
 		self.graphics.guess(letter, result in ('MATCH', 'WIN'), str(self.logic)), # TODO: Let Graphics take care of the representation for us (?)
-
+		
+		#{'WIN': self.win, 'LOSE': self.lose}.get(result, lambda: None)()
+		
 		if result == 'WIN':
 			self.win()
 		elif result == 'LOSE':

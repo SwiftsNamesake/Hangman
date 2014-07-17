@@ -55,9 +55,10 @@ class Logic:
 	def guess(self, letter):
 		''' '''
 		
-		# TODO: Deal with repeated guesses, winning and losing
+		# TODO: Deal with repeated guesses, winning and losing (...)
 		# TODO: Add docstring
 		# TODO: Explain return valus (Enums?)
+		# TODO: Return multiple values (eg. 'MATCH|WIN' or 'MISS|LOSE') (?)
 
 		letter = self.normalize(letter) # Normalize input
 
