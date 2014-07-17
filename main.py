@@ -16,13 +16,15 @@
 #		 - Hints (...)
 #		 - Proper UI, menus (...)
 #		 - Timers, progress bars (?)
-#		 - Add quit method
+#		 - Add quit method (sys.exit?)
 #		 - Statistics, difficulty
 #		 - Decide if chances should be determined by graphics
 #		 - Loading settings (JSON?)
 #		 - Learn Git, move Hangman class to Hangman.py (...)
 #		 - Look into class decorators (cf. logging)
-#		 - Look into function annotations (optional type checking+)
+#		 - Look into function annotations (optional type checking?)
+#		 - Think about overall architecture (cf. MVC)
+#		 - PyQT (?)
 
 # SPEC | -
 #		 - 
