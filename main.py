@@ -121,21 +121,16 @@ class Hangman:
 		#languages.vars = {}
 		languages.var = tk.IntVar()
 		languages.image = ImageTk.PhotoImage(Image.open('data/flags/UK.png'))
-		print(languages.image)
+
+		def closure(fn):
+			def callback(*args):
+				self.log('Changing dictionary to %s' % fn)
+				self.wordFeed = self.createWordFeed(fn)
+				self.win() # Use win() method to restart for now
+			return callback
 
 		for N, name in enumerate(self.wordLists):
-			#languages.vars.update(**{ name: tk.BooleanVar() })
-			# languages.add_checkbutton(label=name, onvalue=True, offvalue=False, variable=languages.vars[name])
-			
-			#def closure(var, fn):
-			def closure(fn):
-				def callback(*args):
-					self.log('Changing dictionary to %s' % fn)
-					self.wordFeed = self.createWordFeed(fn)
-					self.win() # Use win() method to restart for now
-				return callback
-
-			languages.add_radiobutton(label=name, image=languages.image, var=languages.var, value=N, command=closure(name))
+			languages.add_radiobutton(label=name, image=languages.image, compound='left', var=languages.var, value=N, command=closure(name))
 			#languages.vars[name].trace('w', closure(languages.vars[name], name))
 
 		settings.add_cascade(label='Language', menu=languages)
@@ -196,7 +191,7 @@ class Hangman:
 
 	def loadAudio(self):
 		''' '''
-		return namedtuple('Effects', ['lose', 'win'])(*map(mixer.Sound, ['data/audio/strangled.wav', 'data/audio/ding.wav']))
+		return namedtuple('Effects', ['lose', 'win'])(*map(lambda fn: mixer.Sound('data/audio/%s' % fn), ['strangled.wav', 'ding.wav']))
 		#return namedtuple('Effects', ['lose'])(wave.open('data/hangman.wav'))
 
 
