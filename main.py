@@ -35,9 +35,13 @@
 
 import tkinter as tk # Window creation and event handling
 
+from tkinter import messagebox
+
 from graphics import Graphics
 from logic import Logic
 from PIL import Image, ImageTk		# Loading png icons to display alongside dictionaries (NOTE: 3rd party, bundle with game?)
+
+from sys import exit # Closing the console
 
 from string import ascii_letters	# Character set
 from collections import namedtuple	# Probably not needed anymore (moved to utilities.py)
@@ -51,13 +55,19 @@ from inspect import currentframe, getouterframes, getframeinfo # Line numbers (f
 class Hangman:
 	''' '''
 	def __init__(self):
+		''' '''
+
 		#
 		self.size = Graphics.Size(650, 650)
 		self.root = self.createWindow(self.size)
 
+		# Internal settings
+		self.validState = False # Not ready to accept guesses
+		self.DEBUG = tk.BooleanVar()
+		self.VERBOSE = tk.BooleanVar()
+
 		# Dictionaries
 		# TODO: Move to separate method
-		#self.wordLists = { uri : [pair.split('|') for pair in open('data/%s' % uri, 'r').read().split('\n')] for uri in listdir('data') if uri.split('.')[-1] == 'txt' }
 		self.wordLists = [ 'data/dicts/%s' % uri for uri in listdir('data/dicts') if uri.endswith('.txt') ] # Dictionary file URIs
 		
 		# Menus
@@ -82,9 +92,6 @@ class Hangman:
 		# Audio
 		mixer.init()
 		self.effects = self.loadAudio()
-
-		# Internal settings
-		self.validState = False # Not ready to accept guesses
 
 
 	def play(self):
@@ -111,14 +118,15 @@ class Hangman:
 
 		menubar = tk.Menu(self.root)
 
+		# New game
 		menubar.add_command(label='New', command=lambda: print('Not implemented'))
 
 		# Settings
 		settings = tk.Menu(menubar, tearoff=0)
 		settings.add_command(label='Difficulty', command=lambda: print('Moderate'))
-		#settings.add_command(label='Language', command=lambda: print('English for now'))
+
+		# Languages
 		languages = tk.Menu(settings, tearoff=0)
-		#languages.vars = {}
 		languages.var = tk.IntVar()
 		languages.image = ImageTk.PhotoImage(Image.open('data/flags/UK.png'))
 
@@ -131,21 +139,20 @@ class Hangman:
 
 		for N, name in enumerate(self.wordLists):
 			languages.add_radiobutton(label=name, image=languages.image, compound='left', var=languages.var, value=N, command=closure(name))
-			#languages.vars[name].trace('w', closure(languages.vars[name], name))
 
 		settings.add_cascade(label='Language', menu=languages)
-
 		menubar.add_cascade(label='Settings', menu=settings)
 
-		menubar.add_command(label='About', command=lambda: self.log('\n{0}\nHangman\nJonatan H Sundqvist\nJuly 2014\n{0}\n'.format('-'*30), identify=False)) # About box
+		# About box
+		def about():
+			messagebox.askyesno('About', 'Hangman\nJonatan H Sundqvist\nJuly 2014') # .format('-'*30)
+
+		menubar.add_command(label='About', command=about) # About box
 	
 		# Debugging
 		def onToggle(variable, message): return lambda *args: print(message % ['dis', 'en'][variable.get()])
 
-		self.DEBUG = tk.BooleanVar()
 		self.DEBUG.trace('w', onToggle(self.DEBUG, 'Debugging is %sabled.'))
-
-		self.VERBOSE = tk.BooleanVar()
 		self.VERBOSE.trace('w', onToggle(self.VERBOSE, 'Verbose is %sabled.'))
 
 		debug = tk.Menu(menubar, tearoff=0)
@@ -154,7 +161,8 @@ class Hangman:
 		menubar.add_cascade(label='Debug', menu=debug)
 
 		# End game
-		menubar.add_command(label='Quit', command=self.root.quit)
+		# menubar.add_command(label='Quit', command=self.root.quit)
+		menubar.add_command(label='Quit', command=self.quit)
 
 		# Attach menu
 		self.root.config(menu=menubar)
@@ -164,7 +172,7 @@ class Hangman:
 
 	def bindEvents(self):
 		''' '''
-		self.root.bind('<Escape>', lambda e: self.root.quit())
+		self.root.bind('<Escape>', lambda e: self.quit())
 		self.root.bind('<Key>', lambda e: self.onKeyDown(e))
 
 
@@ -248,6 +256,12 @@ class Hangman:
 		self.validState = True # Ready to accept guesses again
 
 
+	def quit(self, message=None, prompt=False):
+		''' '''
+		self.root.quit()
+		#exit(0)
+
+
 	def createWordFeed(self, dictionary):
 		''' '''
 		# TODO: Give class a reference to words (?)
@@ -261,8 +275,9 @@ class Hangman:
 
 	def log(self, *args, identify=True, **kwargs):
 		''' '''
-		DEBUG = True # TODO: Make instance-setting
-		if DEBUG:
+		# TODO: Make instance-setting (✓)
+		# TODO: Different categories (eg. error, log, feedback)
+		if self.DEBUG.get():
 			prefix = '(Hangman) [%s] ' % getouterframes(currentframe())[1][2] if identify else ''
 			print(prefix, *args, **kwargs)
 
