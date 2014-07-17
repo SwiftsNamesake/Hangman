@@ -13,6 +13,8 @@
 
 import tkinter as tk
 
+from SwiftUtils.SwiftUtils import extractTODOs
+from os import listdir
 from collections import namedtuple
 from math import sin, cos
 
@@ -50,6 +52,13 @@ def rotatedRect(x, y, w, h, angle):
 	ox, oy = round(h*sin(angle)), round(h*cos(angle)) # Distance between pivot and the centre of the opposite edge
 
 	return ((x-dx,  y-dy), (x+dx,  y+dy), (x+dx-ox, y+dy+oy), (x-dx-ox,  y-dy+oy)) # Left arm
+
+
+def updateTODOList():
+	paths = [path for path in listdir() if path.endswith('.py')]
+	print('Extracted TODOs from %r' % paths)
+	for fn in paths:
+		extractTODOs(fn, 'TODO.txt', append=True)
 
 
 class Text:
@@ -180,3 +189,6 @@ if __name__ == '__main__':
 	text.animate(root, 4000, 1000//30, width=(text.width(), 20))
 
 	root.mainloop()
+
+	# Update TODOs
+	updateTODOList()
