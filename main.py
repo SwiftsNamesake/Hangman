@@ -57,8 +57,13 @@ from inspect import currentframe, getouterframes, getframeinfo # Line numbers (f
 
 
 class Hangman:
-	''' '''
+
+	'''
+	Doc goes here
+	'''
+
 	def __init__(self):
+
 		''' '''
 
 		#
@@ -120,8 +125,8 @@ class Hangman:
 	def createMenus(self):
 		''' '''
 
-		# TODO: Nested dict menu definition (?)
-		# TODO: Desperately needs a clean-up
+		# TODO: Nested dict or JSON menu definition (?)
+		# TODO: Desperately needs a clean-up (...)
 
 		menubar = tk.Menu(self.root)
 
@@ -223,7 +228,7 @@ class Hangman:
 	def loadIcon(self, fn):
 		''' '''
 		icon = ImageTk.PhotoImage(Image.open('icon.png'))
-		self.tk.call('wm', 'iconphoto', self.root._w, icon)
+		self.root.call('wm', 'iconphoto', self.root._w, icon)
 		return icon
 
 
