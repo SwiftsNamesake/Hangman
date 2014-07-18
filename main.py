@@ -5,6 +5,7 @@
 #
 
 # TODO | - Dictionary databases (sqlite3, JSON?)
+#		 	-- Logophile class (?)
 #		 - Validate input, words (length, characters, 26 - Unique ≥ Chances,  etc.)
 #		 - Complete and thorough documentation (tutorial, rule book, readme?)
 #		 - Refactor
@@ -22,6 +23,7 @@
 #		 - Statistics, difficulty
 #		 - Decide if chances should be determined by graphics
 #		 - Loading settings (JSON?)
+#		 	-- Extract settings from createMenu, hook up menu items to settings
 #		 - Learn Git, move Hangman class to Hangman.py (...)
 #		 - Improve asset management
 #		 	-- Making it less fragile by storing location of each asset type
@@ -77,18 +79,20 @@ class Hangman:
 		# Events
 		self.bindEvents()
 
+		# Gameplay settings
+		self.restartDelay = 2000 			 # Delay before new round begins (ms)
+		self.revealWhenLost = False			 # Reveal the word when the game is lost
+		
+		self.DICT = tk.StringVar(value=self.wordLists[0]) 
+
 		# Game play
 		self.graphics = Graphics(self.root, self.size.width, self.size.height)
-		self.logic = Logic(self.graphics.chances)
-		self.wordFeed = self.createWordFeed('data/dicts/en_dict_thetoohardforyouversion.txt') # TODO: Make dictionaries appear in menu automatically (...)
+		self.logic 	  = Logic(self.graphics.chances)
+		self.wordFeed = self.createWordFeed(self.DICT.get()) # TODO: Make dictionaries appear in menu automatically (...)
+		self.chances  = self.graphics.chances # Initial number of chances for each round
 
 		self.word = None
 		self.hint = None
-
-		# Gameplay settings
-		self.chances = self.graphics.chances # Initial number of chances for each round
-		self.restartDelay = 2000 			 # Delay before new round begins (ms)
-		self.revealWhenLost = False			 # Reveal the word when the game is lost
 
 		# Audio
 		mixer.init()
@@ -129,8 +133,9 @@ class Hangman:
 		# Languages
 		languages = tk.Menu(settings, tearoff=0)
 		languages.var = tk.IntVar()
-		languages.image = ImageTk.PhotoImage(Image.open('data/flags/UK.png'))
+		languages.images = self.loadFlags()
 
+		# TODO: Generic variable trace closures (decorator?)
 		def closure(fn):
 			def callback(*args):
 				self.log('Changing dictionary to %s' % fn)
@@ -138,8 +143,10 @@ class Hangman:
 				self.win() # Use win() method to restart for now
 			return callback
 
+		# TODO: Use appropriate flag
 		for N, name in enumerate(self.wordLists):
-			languages.add_radiobutton(label=name, image=languages.image, compound='left', var=languages.var, value=N, command=closure(name))
+			code = name.split('/')[-1][:2] # Language code is the first to characters in filename
+			languages.add_radiobutton(label=name, image=languages.images[code], compound='left', var=languages.var, value=N, command=closure(name))
 
 		settings.add_cascade(label='Language', menu=languages)
 		menubar.add_cascade(label='Settings', menu=settings)
@@ -198,11 +205,17 @@ class Hangman:
 			self.log('Already guessed \'%s\'.' % event.char)
 
 
+
 	def loadAudio(self):
 		''' '''
 		return namedtuple('Effects', ['lose', 'win'])(*map(lambda fn: mixer.Sound('data/audio/%s' % fn), ['strangled.wav', 'ding.wav']))
 		#return namedtuple('Effects', ['lose'])(wave.open('data/hangman.wav'))
 
+
+	def loadFlags(self):
+		''' '''
+		codes = [('en', 'UK.png'), ('es', 'Spain.png'), ('in', 'India.png'), ('sv', 'Sweden.png'), ('en-us', 'USA.png')] # Maps language codes to flags
+		return { lang: ImageTk.PhotoImage(Image.open('data/flags/%s' % fn)) for lang, fn in codes } # TODO: Extract to seperate method (✓)
 
 	# TODO: Research Python annotation syntax
 	# TOOD: Check if ST3 has support for the same
@@ -279,8 +292,8 @@ class Hangman:
 		# TODO: Make instance-setting (✓)
 		# TODO: Different categories (eg. error, log, feedback)
 		if self.DEBUG.get():
-			prefix = '(Hangman) [%s] ' % getouterframes(currentframe())[1][2] if identify else ''
-			print(prefix, *args, **kwargs)
+			print('(Hangman) [%s] ' % getouterframes(currentframe())[1][2] if identify else '')
+			print(*args, **kwargs)
 
 
 
