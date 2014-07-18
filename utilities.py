@@ -63,7 +63,7 @@ def updateTODOList():
 
 	print('Extracted TODOs from %r' % paths)
 	for N, fn in enumerate(paths):
-		callback = lambda N, TODO: '[**[%d]**](%s "View")  ' % (N, repo % (fn, N))
+		callback = lambda N, TODO: '[**[%d]**](%s "View") %s  \n' % (N, repo % (fn, N), TODO)
 		extractTODOs(fn, 'TODO.md', append=(N>0), callback=callback)
 
 
