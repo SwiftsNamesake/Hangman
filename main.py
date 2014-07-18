@@ -39,6 +39,7 @@
 import tkinter as tk # Window creation and event handling
 
 from tkinter import messagebox
+#from tkinter import ttk
 
 from graphics import Graphics
 from logic import Logic
@@ -63,6 +64,7 @@ class Hangman:
 		#
 		self.size = Graphics.Size(650, 650)
 		self.root = self.createWindow(self.size)
+		self.icon = self.loadIcon('icon.png')
 
 		# Internal settings
 		self.validState = False # Not ready to accept guesses
@@ -216,6 +218,14 @@ class Hangman:
 		''' '''
 		codes = [('en', 'UK.png'), ('es', 'Spain.png'), ('in', 'India.png'), ('sv', 'Sweden.png'), ('en-us', 'USA.png')] # Maps language codes to flags
 		return { lang: ImageTk.PhotoImage(Image.open('data/flags/%s' % fn)) for lang, fn in codes } # TODO: Extract to seperate method (✓)
+
+
+	def loadIcon(self, fn):
+		''' '''
+		icon = ImageTk.PhotoImage(Image.open('icon.png'))
+		self.tk.call('wm', 'iconphoto', self.root._w, icon)
+		return icon
+
 
 	# TODO: Research Python annotation syntax
 	# TOOD: Check if ST3 has support for the same
