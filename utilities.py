@@ -63,6 +63,8 @@ def updateTODOList():
 
 class Text:
 
+	# TODO: Use tk.Text as a base instead (?)
+
 	# TODO: Callbacks
 	# TODO: Animation (colours, movement, curves, etc.)
 	# TODO: Apply styles to different regions
