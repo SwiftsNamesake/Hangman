@@ -55,10 +55,16 @@ def rotatedRect(x, y, w, h, angle):
 
 
 def updateTODOList():
+	''' '''
 	paths = [path for path in listdir() if path.endswith('.py')]
+	repo = 'https://github.com/SwiftsNamesake/Hangman/blob/master/%s#L%d'
+
+	#br = '\n' if fnTo.endswith('.txt') else '\n' # TODO: Use '\n\r' (?)
+
 	print('Extracted TODOs from %r' % paths)
-	for fn in paths:
-		extractTODOs(fn, 'TODO.md', append=True)
+	for N, fn in enumerate(paths):
+		callback = lambda N, TODO: '[**[%d]**](%s "View")  ' % (N, repo % (fn, N))
+		extractTODOs(fn, 'TODO.md', append=(N>0), callback=callback)
 
 
 class Text:
