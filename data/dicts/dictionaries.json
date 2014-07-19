@@ -1,0 +1,43 @@
+{
+
+	"Merriam-Webster": {
+		"file": "en_merriam-webster.txt",
+		"lang": "English",
+		"iso": "en-uk",
+		"desc": null,
+
+		"auth": "www.merriam-webster.com",
+		"date": "July 7 2014"
+	},
+
+	"Jayant's Crucible": {
+		"file": "en_dict_thetoohardforyouversion.txt",
+		"lang": "English",
+		"iso": "en-uk",
+		"desc": null,
+
+		"auth": "Jayant Shivarajan",
+		"date": "July 7 2014"
+	},
+
+	"Test": {
+		"file": "en_dict.txt",
+		"lang": "English",
+		"iso": "en-uk",
+		"desc": null,
+
+		"auth": "Jonatan Sundqvist",
+		"date": "July 7 2014"
+	},
+
+	"Animales": {
+		"file": "animales.txt",
+		"lang": "Spanish",
+		"iso": "es-es",
+		"desc": null,
+
+		"auth": "Jonatan Sundqvist",
+		"date": "July 7 2014"
+	}
+
+}
