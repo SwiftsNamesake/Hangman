@@ -74,13 +74,18 @@ class Hangman:
 
 		# Internal settings
 		self.validState = False # Not ready to accept guesses
-		self.DEBUG = tk.BooleanVar()
-		self.VERBOSE = tk.BooleanVar()
+		self.DEBUG = tk.BooleanVar(value=False)
+		self.VERBOSE = tk.BooleanVar(value=True)
 
 		# Dictionaries
-		# TODO: Move to separate method
 		# TODO: Generic process-dictionaries method (?)
 		self.dictData  = self.loadDictionaries('data/dicts/dictionaries.json')
+		
+		# Gameplay settings
+		self.restartDelay = 2000 			 # Delay before new round begins (ms)
+		self.revealWhenLost = False			 # Reveal the word when the game is lost
+		
+		self.DICT = tk.StringVar(value=next(iter(self.dictData.values()))['file']) # Currently selected dictionary (file name) # TODO: Clean this up
 		#self.wordLists = 'data/dicts/%s' % self.dictData[name]['file'] for name in self.dictData.keys() } # Dictionary file URIs
 
 		# Menus
@@ -88,12 +93,6 @@ class Hangman:
 
 		# Events
 		self.bindEvents()
-
-		# Gameplay settings
-		self.restartDelay = 2000 			 # Delay before new round begins (ms)
-		self.revealWhenLost = False			 # Reveal the word when the game is lost
-		
-		self.DICT = tk.StringVar(value=next(iter(self.dictData.values()))['file']) # Currently selected dictionary (file name) # TODO: Clean this up
 
 		# Game play
 		self.graphics = Graphics(self.root, self.size.width, self.size.height)
@@ -146,40 +145,34 @@ class Hangman:
 		languages.images = self.loadFlags()
 
 		# TODO: Generic variable trace closures (decorator?)
-		def closure(fn):
-			def callback(*args):
+		def changeDict(fn):
+			def closure(*args):
 				self.log('Changing dictionary to %s' % fn)
 				self.wordFeed = self.createWordFeed(fn)
 				self.win() # Use win() method to restart for now
-			return callback
+			return closure
 
 		# TODO: Use appropriate flag
 		for N, name in enumerate(self.dictData.keys()):
 			code = self.dictData[name]['iso'] # Language code is the first to characters in filename
-			languages.add_radiobutton(label=name, image=languages.images[code], compound='left', var=languages.var, value=N, command=closure(self.dictData[name]['file']))
+			fname = self.dictData[name]['file']
+			languages.add_radiobutton(label=name, image=languages.images[code], compound='left', var=self.DICT, value=fname, command=changeDict(fname))
+		else:
+			print('Found %d dictionaries.' % (N+1))
 
 		settings.add_cascade(label='Language', menu=languages)
 		menubar.add_cascade(label='Settings', menu=settings)
 
 		# About box
-		def about():
-			messagebox.askyesno('About', 'Hangman\nJonatan H Sundqvist\nJuly 2014') # .format('-'*30)
-
-		menubar.add_command(label='About', command=about) # About box
+		menubar.add_command(label='About', command=self.about) # About box
 	
-		# Debugging
-		def onToggle(variable, message): return lambda *args: print(message % ['dis', 'en'][variable.get()])
-
-		self.DEBUG.trace('w', onToggle(self.DEBUG, 'Debugging is %sabled.'))
-		self.VERBOSE.trace('w', onToggle(self.VERBOSE, 'Verbose is %sabled.'))
-
+		# Dev menu
 		debug = tk.Menu(menubar, tearoff=0)
 		debug.add_checkbutton(label='Debug', onvalue=True, offvalue=False, variable=self.DEBUG)
 		debug.add_checkbutton(label='Verbose', onvalue=True, offvalue=False, variable=self.VERBOSE)
-		menubar.add_cascade(label='Debug', menu=debug)
+		menubar.add_cascade(label='Dev', menu=debug)
 
 		# End game
-		# menubar.add_command(label='Quit', command=self.root.quit)
 		menubar.add_command(label='Quit', command=self.quit)
 
 		# Attach menu
@@ -214,6 +207,10 @@ class Hangman:
 		else:
 			self.log('Already guessed \'%s\'.' % event.char)
 
+
+	def about(self):
+		''' Show an about box '''
+		messagebox.askyesno('About', 'Hangman\nJonatan H Sundqvist\nJuly 2014') # .format('-'*30)
 
 
 	def loadAudio(self):
