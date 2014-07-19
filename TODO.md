@@ -86,18 +86,18 @@ utilities.py
 [**[44]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L44 "View") Flexible arguments, error handling, validation  
 [**[45]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L45 "View") Move to SwiftUtils (?)  
 [**[46]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L46 "View") Use named tuples (?)  
-[**[72]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L72 "View") Use tk.Text as a base instead (?)  
-[**[74]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L74 "View") Callbacks  
-[**[75]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L75 "View") Animation (colours, movement, curves, etc.)  
-[**[76]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L76 "View") Apply styles to different regions  
-[**[77]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L77 "View") String manipulations (indeces, replace, regex, etc.)  
-[**[78]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L78 "View") Rename (?)  
-[**[112]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L112 "View") Use complex numbers instead (?)  
-[**[129]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L129 "View") Animate properties other than Canvas styles (eg. size, position)  
-[**[130]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L130 "View") Use generators (?)  
-[**[131]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L131 "View") Root argument necessary (?)  
-[**[132]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L132 "View") Non-numeric ranges  
-[**[133]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L133 "View") Disallow multiple properties (?)  
-[**[134]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L134 "View") Non-equal durations  
-[**[143]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L143 "View") Convert to int (?)  
+[**[77]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L77 "View") Use tk.Text as a base instead (?)  
+[**[79]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L79 "View") Callbacks  
+[**[80]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L80 "View") Animation (colours, movement, curves, etc.)  
+[**[81]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L81 "View") Apply styles to different regions  
+[**[82]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L82 "View") String manipulations (indeces, replace, regex, etc.)  
+[**[83]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L83 "View") Rename (?)  
+[**[117]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L117 "View") Use complex numbers instead (?)  
+[**[134]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L134 "View") Animate properties other than Canvas styles (eg. size, position)  
+[**[135]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L135 "View") Use generators (?)  
+[**[136]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L136 "View") Root argument necessary (?)  
+[**[137]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L137 "View") Non-numeric ranges  
+[**[138]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L138 "View") Disallow multiple properties (?)  
+[**[139]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L139 "View") Non-equal durations  
+[**[148]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L148 "View") Convert to int (?)  
   

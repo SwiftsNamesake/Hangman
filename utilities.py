@@ -61,11 +61,16 @@ def updateTODOList():
 
 	#br = '\n' if fnTo.endswith('.txt') else '\n' # TODO: Use '\n\r' (?)
 
-	print('Extracted TODOs from %r' % paths)
-	for N, fn in enumerate(paths):
-		callback = lambda N, TODO: '[**[%d]**](%s "View") %s' % (N, repo % (fn, N), TODO)
-		extractTODOs(fn, 'TODO.md', append=(N>0), callback=callback, end='  \n')
+	count = { 'total': 0, 'done': 0, 'ongoing': 0 }
 
+	print('Extracted TODOs from %r' % paths)
+	
+	for N, fn in enumerate(paths):
+		def callback(N, TODO):
+			count['total'] += 1
+			return '[**[%d]**](%s "View") %s' % (N, repo % (fn, N), TODO)
+		extractTODOs(fn, 'TODO.md', append=(N>0), callback=callback, end='  \n')
+	print('Found %d TODO items' % count['total'])
 
 class Text:
 
