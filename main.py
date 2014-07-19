@@ -37,6 +37,7 @@
 
 
 import tkinter as tk # Window creation and event handling
+import json 		 # Loading settings and meta data
 
 from tkinter import messagebox
 #from tkinter import ttk
@@ -78,8 +79,10 @@ class Hangman:
 
 		# Dictionaries
 		# TODO: Move to separate method
-		self.wordLists = [ 'data/dicts/%s' % uri for uri in listdir('data/dicts') if uri.endswith('.txt') ] # Dictionary file URIs
-		
+		# TODO: Generic process-dictionaries method (?)
+		self.dictData  = self.loadDictionaries('data/dicts/dictionaries.json')
+		#self.wordLists = 'data/dicts/%s' % self.dictData[name]['file'] for name in self.dictData.keys() } # Dictionary file URIs
+
 		# Menus
 		self.menubar = self.createMenus()
 
@@ -90,7 +93,7 @@ class Hangman:
 		self.restartDelay = 2000 			 # Delay before new round begins (ms)
 		self.revealWhenLost = False			 # Reveal the word when the game is lost
 		
-		self.DICT = tk.StringVar(value=self.wordLists[0]) 
+		self.DICT = tk.StringVar(value=next(iter(self.dictData.values()))['file']) # Currently selected dictionary (file name) # TODO: Clean this up
 
 		# Game play
 		self.graphics = Graphics(self.root, self.size.width, self.size.height)
@@ -138,8 +141,8 @@ class Hangman:
 		settings.add_command(label='Difficulty', command=lambda: print('Moderate'))
 
 		# Languages
-		languages = tk.Menu(settings, tearoff=0)
-		languages.var = tk.IntVar()
+		languages 		 = tk.Menu(settings, tearoff=0)
+		languages.var 	 = tk.IntVar()
 		languages.images = self.loadFlags()
 
 		# TODO: Generic variable trace closures (decorator?)
@@ -151,9 +154,9 @@ class Hangman:
 			return callback
 
 		# TODO: Use appropriate flag
-		for N, name in enumerate(self.wordLists):
-			code = name.split('/')[-1][:2] # Language code is the first to characters in filename
-			languages.add_radiobutton(label=name, image=languages.images[code], compound='left', var=languages.var, value=N, command=closure(name))
+		for N, name in enumerate(self.dictData.keys()):
+			code = self.dictData[name]['iso'] # Language code is the first to characters in filename
+			languages.add_radiobutton(label=name, image=languages.images[code], compound='left', var=languages.var, value=N, command=closure(self.dictData[name]['file']))
 
 		settings.add_cascade(label='Language', menu=languages)
 		menubar.add_cascade(label='Settings', menu=settings)
@@ -221,13 +224,19 @@ class Hangman:
 
 	def loadFlags(self):
 		''' '''
-		codes = [('en', 'UK.png'), ('es', 'Spain.png'), ('in', 'India.png'), ('sv', 'Sweden.png'), ('en-us', 'USA.png')] # Maps language codes to flags
+		codes = [('en-uk', 'UK.png'), ('es-es', 'Spain.png'), ('in', 'India.png'), ('sv', 'Sweden.png'), ('en-us', 'USA.png')] # Maps language codes to flags
 		return { lang: ImageTk.PhotoImage(Image.open('data/flags/%s' % fn)) for lang, fn in codes } # TODO: Extract to seperate method (✓)
+
+
+	def loadDictionaries(self, fn):
+		''' Loads JSON dictionary meta data '''
+		with open(fn, 'r') as dicts:
+			return json.load(dicts)
 
 
 	def loadIcon(self, fn):
 		''' '''
-		icon = ImageTk.PhotoImage(Image.open('icon.png'))
+		icon = ImageTk.PhotoImage(Image.open(fn))
 		self.root.call('wm', 'iconphoto', self.root._w, icon)
 		return icon
 
@@ -291,11 +300,11 @@ class Hangman:
 		#exit(0)
 
 
-	def createWordFeed(self, dictionary):
+	def createWordFeed(self, fn):
 		''' '''
 		# TODO: Give class a reference to words (?)
-		# NOTE: Currently, the entire file is kept in memory
-		with open(dictionary, 'r') as wordFile:
+		# TODO: Wise to hard-code path (?)
+		with open('data/dicts/%s' %  fn, 'r') as wordFile:
 			words = wordFile.read().split('\n')
 		while True:
 			#yield choice('treasury|laconic|forboding'.split('|'))
