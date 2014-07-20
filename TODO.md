@@ -60,22 +60,21 @@ logic.py
 main.py  
 -------  
   
-[**[81]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L81 "View") Move to separate method  
-[**[82]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L82 "View") Generic process-dictionaries method (?)  
-[**[131]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L131 "View") Nested dict or JSON menu definition (?)  
-[**[132]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L132 "View") Desperately needs a clean-up (...)  
-[**[148]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L148 "View") Generic variable trace closures (decorator?)  
-[**[156]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L156 "View") Use appropriate flag  
-[**[199]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L199 "View") Make sure guesses can't be made in a transitory state  
-[**[244]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L244 "View") Research Python annotation syntax  
-[**[253]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L253 "View") Clean up the 'switch' logic  
-[**[266]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L266 "View") Extract restart logic (✓)  
-[**[275]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L275 "View") Extract restart logic (✓)  
-[**[276]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L276 "View") Show correct word before restarting  
-[**[305]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L305 "View") Give class a reference to words (?)  
-[**[306]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L306 "View") Wise to hard-code path (?)  
-[**[316]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L316 "View") Make instance-setting (✓)  
-[**[317]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L317 "View") Different categories (eg. error, log, feedback)  
+[**[81]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L81 "View") Generic process-dictionaries method (?)  
+[**[130]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L130 "View") Nested dict or JSON menu definition (?)  
+[**[131]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L131 "View") Desperately needs a clean-up (...)  
+[**[147]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L147 "View") Generic variable trace closures (decorator?)  
+[**[155]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L155 "View") Use appropriate flag  
+[**[192]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L192 "View") Make sure guesses can't be made in a transitory state  
+[**[241]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L241 "View") Research Python annotation syntax  
+[**[250]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L250 "View") Clean up the 'switch' logic  
+[**[263]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L263 "View") Extract restart logic (✓)  
+[**[272]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L272 "View") Extract restart logic (✓)  
+[**[273]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L273 "View") Show correct word before restarting  
+[**[302]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L302 "View") Give class a reference to words (?)  
+[**[303]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L303 "View") Wise to hard-code path (?)  
+[**[313]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L313 "View") Make instance-setting (✓)  
+[**[314]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L314 "View") Different categories (eg. error, log, feedback)  
   
 utilities.py  
 ------------  

@@ -165,17 +165,14 @@ class Text:
 		# Figure out how to use generators
 		# as callbacks when clear headed.
 		def nextFrame():
-			
-			nonlocal nFrames
-			nonlocal nElapsed
-
+			# TODO: Rename to createFrames and return list of frames instead (?)
 			for frame in range(nFrames):
 				self.setStyle(**{ prop: next(feed) for prop, feed in feeds.items() })
 				yield
 		
-		def animate():
-			for frame in nextFrame():
-				root.after(dt, animate)
+		def animate(frames):
+			for frame in frames:
+				yield
 
 			#if nElapsed < nFrames: root.after(dt, onAnimate)
 
@@ -184,8 +181,14 @@ class Text:
 			# I -= (255 * dt / duration)
 			# if I >= 0: root.after(dt, onAnimate)
 		#onAnimate()
-		animate()
+		# TODO: Use yield from (?)
+		animator = animate(nextFrame())
 
+		def scheduler():
+			next(animator)
+			root.after(dt, scheduler)
+
+		scheduler()
 
 	def moveTo(self, x=None, y=None, anchor='NW'):
 		pass
@@ -199,7 +202,7 @@ if __name__ == '__main__':
 	cvs.pack()
 
 	text = Text(cvs, 'Fading...', (10, 10), { 'anchor': tk.NW, 'font': 'Helvetica 12' })
-	text.animate(root, 4000, 1000//30, width=(text.width(), 20))
+	text.animate(root, 3000, 1000//30, width=(text.width(), 20))
 
 	root.mainloop()
 
