@@ -27,6 +27,7 @@
 #		 - Learn Git, move Hangman class to Hangman.py (...)
 #		 - Improve asset management
 #		 	-- Making it less fragile by storing location of each asset type
+#		 	-- Separate module, or atleast a set of utility functions
 #		 - Look into class decorators (cf. logging)
 #		 - Look into function annotations (optional type checking?)
 #		 	-- cf. inspect.getarcspec
@@ -61,6 +62,7 @@ class Hangman:
 
 	'''
 	Doc goes here
+
 	'''
 
 	def __init__(self):
@@ -73,29 +75,31 @@ class Hangman:
 		self.icon = self.loadIcon('icon.png')
 
 		# Internal settings
-		self.validState = False # Not ready to accept guesses
-		self.DEBUG = tk.BooleanVar(value=False)
-		self.VERBOSE = tk.BooleanVar(value=True)
+		self.validState = False 						# Not ready to accept guesses
+		self.DEBUG 		= tk.BooleanVar(value=False)	# Print debug messages
+		self.VERBOSE 	= tk.BooleanVar(value=True)		# Print verbose debug messages
 
 		# Dictionaries
 		# TODO: Generic process-dictionaries method (?)
 		self.dictData  = self.loadDictionaries('data/dicts/dictionaries.json')
 		
 		# Gameplay settings
-		self.restartDelay = 2000 			 # Delay before new round begins (ms)
+		self.restartDelay   = 2000 			 # Delay before new round begins (ms)
 		self.revealWhenLost = False			 # Reveal the word when the game is lost
 		
 		self.DICT = tk.StringVar(value=next(iter(self.dictData.values()))['file']) # Currently selected dictionary (file name) # TODO: Clean this up
 		#self.wordLists = 'data/dicts/%s' % self.dictData[name]['file'] for name in self.dictData.keys() } # Dictionary file URIs
 
 		# Menus
-		self.menubar = self.createMenus()
+		#self.menubar = self.createMenus()
 
 		# Events
 		self.bindEvents()
 
 		# Game play
+		# TODO: Fix geometry bug caused by menubar (Canvas overflows the window)
 		self.graphics = Graphics(self.root, self.size.width, self.size.height)
+		#self.graphics = Graphics(self.root, 650, 625)
 		self.logic 	  = Logic(self.graphics.chances)
 		self.wordFeed = self.createWordFeed(self.DICT.get()) # TODO: Make dictionaries appear in menu automatically (...)
 		self.chances  = self.graphics.chances # Initial number of chances for each round
@@ -215,7 +219,8 @@ class Hangman:
 
 	def loadAudio(self):
 		''' '''
-		return namedtuple('Effects', ['lose', 'win'])(*map(lambda fn: mixer.Sound('data/audio/%s' % fn), ['strangled.wav', 'ding.wav']))
+		files = ['strangled.wav', 'ding.wav']
+		return namedtuple('Effects', ['lose', 'win'])(*map(lambda fn: mixer.Sound('data/audio/%s' % fn), files))
 		#return namedtuple('Effects', ['lose'])(wave.open('data/hangman.wav'))
 
 

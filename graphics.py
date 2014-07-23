@@ -28,6 +28,7 @@ from collections import namedtuple
 from math import radians
 from string import ascii_uppercase
 
+
 class Graphics:
 
 	Size = namedtuple('Size', ['width', 'height'])
