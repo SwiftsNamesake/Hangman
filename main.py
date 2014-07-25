@@ -52,12 +52,12 @@ from sys import exit 				# Closing the console (only quits the intepreter?)
 from string import ascii_letters	# Character set
 from collections import namedtuple	# Probably not needed anymore (moved to utilities.py)
 from random import choice			# Choosing words (should eventually be superseded by database queries)
-from pygame import mixer			# Audio (NOTE: 3rd party, bundle with game?)
+#from pygame import mixer			# Audio (NOTE: 3rd party, bundle with game?)
 from os import listdir 				# Finding and loading dictionaries
 
 from inspect import currentframe, getouterframes, getframeinfo # Line numbers (for logging)
 
-
+C:\Python34\Lib\site-packages\PyQt4;C:\Python34\;C:\Python34\Scripts;C:\Program Files (x86)\Haskell\bin;C:\Program Files (x86)\Haskell Platform\2013.2.0.0\lib\extralibs\bin;C:\Program Files (x86)\Haskell Platform\2013.2.0.0\bin;C:\Python33\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Haskell Platform\2013.2.0.0\mingw\bin;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\Java\jdk1.7.0_45\bin;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files (x86)\GnuWin32\bin;C:\Program Files\Sublime Text 3
 class Hangman:
 
 	'''
@@ -108,8 +108,8 @@ class Hangman:
 		self.hint = None
 
 		# Audio
-		mixer.init()
-		self.effects = self.loadAudio()
+		#mixer.init()
+		#self.effects = self.loadAudio()
 
 
 	def play(self):
@@ -275,7 +275,7 @@ class Hangman:
 		# TODO: Extract restart logic (✓)
 		self.log('Phew. You figured it out!')
 		self.validState = False # Disable guessing between rounds
-		self.effects.win.play()
+		#self.effects.win.play()
 		self.root.after(self.restartDelay, self.restart) # TODO: Extract to restart method (?)
 	
 	
@@ -285,7 +285,7 @@ class Hangman:
 		# TODO: Show correct word before restarting
 		self.log('You\'ve been hanged. Requiescat in pace!')
 		self.validState = False # Disable guessing between rounds
-		self.effects.lose.play()
+		#self.effects.lose.play()
 		self.root.after(self.restartDelay, self.restart)
 
 

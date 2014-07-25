@@ -13,7 +13,7 @@
 
 import tkinter as tk
 
-from SwiftUtils.SwiftUtils import extractTODOs
+from SwiftUtils import extractTODOs
 from os import listdir
 from collections import namedtuple
 from math import sin, cos
