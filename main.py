@@ -96,7 +96,7 @@ class Hangman:
 		# Events
 		self.bindEvents()
 
-		# Game play
+		# Game playhamac
 		# TODO: Fix geometry bug caused by menubar (Canvas overflows the window)
 		self.graphics = Graphics(self.root, self.size.width, self.size.height)
 		#self.graphics = Graphics(self.root, 650, 625)
@@ -145,22 +145,22 @@ class Hangman:
 
 		# Languages
 		languages 		 = tk.Menu(settings, tearoff=0)
-		languages.var 	 = tk.IntVar()
 		languages.images = self.loadFlags()
 
 		# TODO: Generic variable trace closures (decorator?)
-		def changeDict(fn):
+		def changeDict(name):
 			def closure(*args):
-				self.log('Changing dictionary to %s' % fn)
-				self.wordFeed = self.createWordFeed(fn)
+				self.log('Changing dictionary to %s' % name)
+				self.wordFeed = self.createWordFeed(name)
 				self.win() # Use win() method to restart for now
 			return closure
+
+		self.DICT.trace('w', lambda *args, var=self.DICT: self.setDictionary(var.get()))
 
 		# TODO: Use appropriate flag
 		for N, name in enumerate(self.dictData.keys()):
 			code = self.dictData[name]['iso'] # Language code is the first to characters in filename
-			fname = self.dictData[name]['file']
-			languages.add_radiobutton(label=name, image=languages.images[code], compound='left', var=self.DICT, value=fname, command=changeDict(fname))
+			languages.add_radiobutton(label=name, image=languages.images[code], compound='left', var=self.DICT, value=name)
 		else:
 			print('Found %d dictionaries.' % (N+1))
 
@@ -236,6 +236,13 @@ class Hangman:
 			return json.load(dicts)
 
 
+	def setDictionary(name):
+		''' Sets the dictionary specified by the name '''
+		self.log('Changing dictionary to %s' % name)
+		self.wordFeed = self.createWordFeed(name)
+		self.win() # Use win() method to restart for now
+
+
 	def loadIcon(self, fn):
 		''' '''
 		icon = ImageTk.PhotoImage(Image.open(fn))
@@ -302,10 +309,11 @@ class Hangman:
 		#exit(0)
 
 
-	def createWordFeed(self, fn):
-		''' '''
+	def createWordFeed(self, name):
+		''' Creates a word feed from the dictionary specified by the name '''
 		# TODO: Give class a reference to words (?)
 		# TODO: Wise to hard-code path (?)
+		fn = self.dictData[name]['file']
 		with open('data/dicts/%s' %  fn, 'r') as wordFile:
 			words = wordFile.read().split('\n')
 		while True:
