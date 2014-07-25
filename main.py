@@ -110,8 +110,8 @@ class Hangman:
 		self.hint = None
 
 		# Audio
-		#mixer.init()
-		#self.effects = self.loadAudio()
+		mixer.init()
+		self.effects = self.loadAudio()
 
 
 	def play(self):
@@ -277,7 +277,7 @@ class Hangman:
 		# TODO: Extract restart logic (✓)
 		self.log('Phew. You figured it out!')
 		self.validState = False # Disable guessing between rounds
-		#self.effects.win.play()
+		self.effects.win.play()
 		self.root.after(self.restartDelay, self.restart) # TODO: Extract to restart method (?)
 	
 	
@@ -287,7 +287,7 @@ class Hangman:
 		# TODO: Show correct word before restarting
 		self.log('You\'ve been hanged. Requiescat in pace!')
 		self.validState = False # Disable guessing between rounds
-		#self.effects.lose.play()
+		self.effects.lose.play()
 		self.root.after(self.restartDelay, self.restart)
 
 
