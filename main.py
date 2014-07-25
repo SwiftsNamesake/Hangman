@@ -8,6 +8,8 @@
 #		 	-- Logophile class (?)
 #		 - Validate input, words (length, characters, 26 - Unique ≥ Chances,  etc.)
 #		 - Complete and thorough documentation (tutorial, rule book, readme?)
+#		 - Robustness, debugging, error handling
+#		 	-- Dependency check
 #		 - Refactor
 #		 - Think about overall architecture (cf. MVC)
 #		 	-- Create class (...)
