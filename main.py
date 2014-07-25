@@ -54,7 +54,7 @@ from sys import exit 				# Closing the console (only quits the intepreter?)
 from string import ascii_letters	# Character set
 from collections import namedtuple	# Probably not needed anymore (moved to utilities.py)
 from random import choice			# Choosing words (should eventually be superseded by database queries)
-#from pygame import mixer			# Audio (NOTE: 3rd party, bundle with game?)
+from pygame import mixer			# Audio (NOTE: 3rd party, bundle with game?)
 from os import listdir 				# Finding and loading dictionaries
 
 from inspect import currentframe, getouterframes, getframeinfo # Line numbers (for logging)
@@ -316,6 +316,7 @@ class Hangman:
 		# TODO: Give class a reference to words (?)
 		# TODO: Wise to hard-code path (?)
 		fn = self.dictData[name]['file']
+		print(fn)
 		with open('data/dicts/%s' %  fn, 'r') as wordFile:
 			words = wordFile.read().split('\n')
 		while True:
