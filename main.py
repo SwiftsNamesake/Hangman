@@ -87,16 +87,16 @@ class Hangman:
 		self.restartDelay   = 2000 			 # Delay before new round begins (ms)
 		self.revealWhenLost = False			 # Reveal the word when the game is lost
 		
-		self.DICT = tk.StringVar(value=next(iter(self.dictData.values()))['file']) # Currently selected dictionary (file name) # TODO: Clean this up
+		self.DICT = tk.StringVar(value=next(iter(self.dictData.keys()))) # Currently selected dictionary (file name) # TODO: Clean this up
 		#self.wordLists = 'data/dicts/%s' % self.dictData[name]['file'] for name in self.dictData.keys() } # Dictionary file URIs
 
 		# Menus
-		#self.menubar = self.createMenus()
+		self.menubar = self.createMenus()
 
 		# Events
 		self.bindEvents()
 
-		# Game playhamac
+		# Game play
 		# TODO: Fix geometry bug caused by menubar (Canvas overflows the window)
 		self.graphics = Graphics(self.root, self.size.width, self.size.height)
 		#self.graphics = Graphics(self.root, 650, 625)
@@ -227,7 +227,7 @@ class Hangman:
 	def loadFlags(self):
 		''' '''
 		codes = [('en-uk', 'UK.png'), ('es-es', 'Spain.png'), ('in', 'India.png'), ('sv', 'Sweden.png'), ('en-us', 'USA.png')] # Maps language codes to flags
-		return { lang: ImageTk.PhotoImage(Image.open('data/flags/%s' % fn)) for lang, fn in codes } # TODO: Extract to seperate method (✓)
+		return { lang: ImageTk.PhotoImage(Image.open('data/flags/%s' % fn)) for lang, fn in codes } # TODO: Extract to separate method (✓)
 
 
 	def loadDictionaries(self, fn):
@@ -236,7 +236,7 @@ class Hangman:
 			return json.load(dicts)
 
 
-	def setDictionary(name):
+	def setDictionary(self, name):
 		''' Sets the dictionary specified by the name '''
 		self.log('Changing dictionary to %s' % name)
 		self.wordFeed = self.createWordFeed(name)
