@@ -1,6 +1,0 @@
-mono|Le gusta los platanos
-lobo|Depredador feroz que vive en manadas
-caballo|Relinchador
-burro|Muy tenaz
-lince|Gato boreal
-cuervo|Puede volar
