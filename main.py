@@ -87,7 +87,6 @@ class Hangman:
 		self.messages = []
 
 		# Resources
-		# TODO: Generic process-dictionaries method (✓)
 		self.dictData 	= self.loadDictionaries('data/dicts/dictionaries.json')
 		self.flags 		= self.loadFlags()
 
