@@ -23,7 +23,7 @@
 
 import tkinter as tk
 
-from utilities import rectangle, rotatedRect, Rect
+from utilities import rectangle, rotatedRect, Rect, Size
 from collections import namedtuple
 from math import radians
 from string import ascii_uppercase
@@ -31,7 +31,6 @@ from string import ascii_uppercase
 
 class Graphics:
 
-	Size = namedtuple('Size', ['width', 'height'])
 	Word = namedtuple('Word', ['word', 'id', 'pos', 'format']) # TODO: Rename, extract (?)
 
 	# High-level interface
@@ -39,7 +38,7 @@ class Graphics:
 		# Initialize
 		self.canvas = tk.Canvas(width=width, height=height, background='white')
 		self.canvas.pack()
-		self.size = Graphics.Size(width, height)
+		self.size = Size(width, height)
 
 		# All parts in the correct order
 		self.order = ('mound', 'pole', 'beam', 'corbel', 'rope', 'head', 'torso', 'LArm', 'RArm', 'LLeg', 'RLeg', 'noose')

@@ -4,10 +4,10 @@
 # July 10 2014
 #
 
-# TODO | -
-#		 -
+# TODO | - 
+#		 - 
 
-# SPEC | -
+# SPEC | - 
 #		 - 
 
 
@@ -20,7 +20,7 @@ from math import sin, cos
 
 
 Rect = namedtuple('Rect', 'left top right bottom')
-Size = namedtuple('Size', 'width, height')
+Size = namedtuple('Size', 'width height')
 Point = namedtuple('Point', 'x y')
 
 

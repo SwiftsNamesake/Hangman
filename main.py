@@ -1,4 +1,5 @@
-# Hangman.py
+#
+# Hangman - main
 #
 # Jonatan H Sundqvist
 # July 10 2014
@@ -22,7 +23,7 @@
 #		 	-- Languages flags
 #		 	-- Timers, progress bars (?)
 #		 - Add quit method (sys.exit?)
-#		 - Statistics, difficulty
+#		 - Statistics, difficulty, profiles, remember state
 #		 - Decide if chances should be determined by graphics
 #		 - Loading settings (JSON?)
 #		 	-- Extract settings from createMenu, hook up menu items to settings
@@ -47,9 +48,9 @@ from tkinter import messagebox
 
 from graphics import Graphics
 from logic import Logic
-from PIL import Image, ImageTk		# Loading png icons to display alongside dictionaries (NOTE: 3rd party, bundle with game?)
+from utilities import Size
 
-from sys import exit 				# Closing the console (only quits the interpreter?)
+from PIL import Image, ImageTk		# Loading png icons to display alongside dictionaries (NOTE: 3rd party, bundle with game?)
 
 from string import ascii_letters	# Character set
 from collections import namedtuple	# Probably not needed anymore (moved to utilities.py)
@@ -71,8 +72,8 @@ class Hangman:
 
 		''' '''
 
-		#
-		self.size = Graphics.Size(650, 650)
+		# Window
+		self.size = Size(650, 650)
 		self.root = self.createWindow(self.size)
 		self.icon = self.loadIcon('icon.png')
 
@@ -80,6 +81,9 @@ class Hangman:
 		self.validState = False 						# Not ready to accept guesses
 		self.DEBUG 		= tk.BooleanVar(value=False)	# Print debug messages
 		self.VERBOSE 	= tk.BooleanVar(value=True)		# Print verbose debug messages
+
+		# Logging
+		self.messages = []
 
 		# Dictionaries
 		# TODO: Generic process-dictionaries method (?)
@@ -100,8 +104,8 @@ class Hangman:
 
 		# Game play
 		# TODO: Fix geometry bug caused by menubar (Canvas overflows the window)
-		self.graphics = Graphics(self.root, self.size.width, self.size.height)
 		#self.graphics = Graphics(self.root, 650, 625)
+		self.graphics = Graphics(self.root, self.size.width, self.size.height-22) # TODO: Fix this temporary layout hack
 		self.logic 	  = Logic(self.graphics.chances)
 		self.wordFeed = self.createWordFeed(self.DICT.get()) # TODO: Make dictionaries appear in menu automatically (...)
 		self.chances  = self.graphics.chances # Initial number of chances for each round
@@ -147,7 +151,7 @@ class Hangman:
 
 		# Languages
 		languages 		 = tk.Menu(settings, tearoff=0)
-		languages.images = self.loadFlags()
+		languages.images = self.loadFlags() # TODO: Move image resources to init
 
 		# TODO: Generic variable trace closures (decorator?)
 		def changeDict(name):
@@ -164,7 +168,7 @@ class Hangman:
 			code = self.dictData[name]['iso'] # Language code is the first to characters in filename
 			languages.add_radiobutton(label=name, image=languages.images[code], compound='left', var=self.DICT, value=name)
 		else:
-			print('Found %d dictionaries.' % (N+1))
+			self.log('Found %d dictionaries.' % (N+1))
 
 		settings.add_cascade(label='Language', menu=languages)
 		menubar.add_cascade(label='Settings', menu=settings)
@@ -188,7 +192,7 @@ class Hangman:
 
 
 	def bindEvents(self):
-		''' '''
+		''' Binds callbacks to events '''
 		self.root.bind('<Escape>', lambda e: self.quit())
 		self.root.bind('<Key>', lambda e: self.onKeyDown(e))
 
@@ -216,18 +220,17 @@ class Hangman:
 
 	def about(self):
 		''' Show an about box '''
-		messagebox.askyesno('About', 'Hangman\nJonatan H Sundqvist\nJuly 2014') # .format('-'*30)
+		messagebox.askyesno('About', 'Hangman\nJonatan H Sundqvist\nJuly 2014')
 
 
 	def loadAudio(self):
 		''' '''
 		files = ['strangled.wav', 'ding.wav']
 		return namedtuple('Effects', ['lose', 'win'])(*map(lambda fn: mixer.Sound('data/audio/%s' % fn), files))
-		#return namedtuple('Effects', ['lose'])(wave.open('data/hangman.wav'))
 
 
 	def loadFlags(self):
-		''' '''
+		''' Loads all flag files and creates a map between those and their respective ISO language codes '''
 		codes = [('en-uk', 'UK.png'), ('es-es', 'Spain.png'), ('in', 'India.png'), ('sv', 'Sweden.png'), ('en-us', 'USA.png')] # Maps language codes to flags
 		return { lang: ImageTk.PhotoImage(Image.open('data/flags/%s' % fn)) for lang, fn in codes } # TODO: Extract to separate method (✓)
 
@@ -246,7 +249,7 @@ class Hangman:
 
 
 	def loadIcon(self, fn):
-		''' '''
+		''' Loads and sets the title bar icon '''
 		icon = ImageTk.PhotoImage(Image.open(fn))
 		self.root.call('wm', 'iconphoto', self.root._w, icon)
 		return icon
@@ -256,7 +259,8 @@ class Hangman:
 	# TOOD: Check if ST3 has support for the same
 	#def guess(self : str, letter : str) -> None:
 	def guess(self, letter):
-		''' '''
+		''' Guesses one letter '''
+		# TODO: Write a slightly more helpful docstring
 		result = self.logic.guess(letter)
 		
 		self.log('Guessing %s. The guess is a %s' % (letter, result))
@@ -273,7 +277,7 @@ class Hangman:
 
 
 	def win(self):
-		''' '''
+		''' Victorious feedback, schedules the next round '''
 		# TODO: Extract restart logic (✓)
 		self.log('Phew. You figured it out!')
 		self.validState = False # Disable guessing between rounds
@@ -282,7 +286,7 @@ class Hangman:
 	
 	
 	def lose(self):
-		''' '''
+		''' Failure feedback, schedules the next round '''
 		# TODO: Extract restart logic (✓)
 		# TODO: Show correct word before restarting
 		self.log('You\'ve been hanged. Requiescat in pace!')
@@ -306,7 +310,8 @@ class Hangman:
 
 
 	def quit(self, message=None, prompt=False):
-		''' '''
+		''' Exits the application '''
+		# TODO: Find a way to close Python
 		self.root.quit()
 		#exit(0)
 
@@ -324,12 +329,14 @@ class Hangman:
 
 
 	def log(self, *args, identify=True, **kwargs):
-		''' '''
+		''' Prints any number of messages to stdout, with optional context (class name, line number) '''
 		# TODO: Make instance-setting (✓)
 		# TODO: Different categories (eg. error, log, feedback)
 		if self.DEBUG.get():
-			print('(Hangman) [%s] ' % getouterframes(currentframe())[1][2] if identify else '')
+			print('(Hangman) [%s] ' % getouterframes(currentframe())[1][2] if identify else '', end='')
 			print(*args, **kwargs)
+
+		self.messages += [msg for msg in args]
 
 
 

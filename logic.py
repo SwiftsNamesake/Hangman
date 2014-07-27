@@ -20,6 +20,7 @@ from collections import namedtuple
 from enum import Enum
 from string import ascii_uppercase
 
+
 class Logic:
 	
 	#Phases = Enum('Phase', 'ONGOING LOST WON') # Enum type representing the current phase of the game

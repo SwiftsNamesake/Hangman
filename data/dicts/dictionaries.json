@@ -3,7 +3,7 @@
 	"Merriam-Webster": {
 		"file": "en_merriam-webster.txt",
 		"lang": "English",
-		"iso": "en-uk",
+		"iso": "en-us",
 		"desc": null,
 
 		"auth": "www.merriam-webster.com",
