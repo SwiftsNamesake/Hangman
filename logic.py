@@ -7,28 +7,34 @@
 # TODO | - Add test suite in main (?)
 #		 - Debugging, logging, assertions
 #		 - Support for whitespace, Unicode
-#		 - Validate input in this module (?)
+#		 	-- Revealed by default, toggled by setting
+#		 - Validate input in this module (✗)
+#		 	-- This module should not concern itself with character sets
+#		 - Query functions (unguessed, wrong, correct, etc.)
+
 
 # SPEC | - Underscores (_) are used to represent remaining letters internally (unwise?)
 #		 - Guesses are case-insensitive (setting?)
 #		 - Guesses are stored in lower-case
 #		 - Both lower-case and upper-case letters are allowed in words
 #		 - Words must only contain the twenty-six letters of the English alphabet and spaces (for now)
+#		 	-- This constraint will definitely be removed in later versions.
+#		 	-- This module should not impose any hard-coded limitations on input
 
 
-from collections import namedtuple
-from enum import Enum
-from string import ascii_uppercase
+from collections import namedtuple 	# Game state
+from enum import Enum				# Game phases (currently not used)
+from string import ascii_uppercase 	# Allowed characters (cf. SPEC)
 
 
 class Logic:
 	
-	#Phases = Enum('Phase', 'ONGOING LOST WON') # Enum type representing the current phase of the game
 	class Phases:
 		ONGOING = 0
 		LOST = 1
 		WON = 2
-		
+	
+
 	def __init__(self, chances):
 		self.chances = chances  # Wrong guesses allowed before losing
 		self.state 	 = None 	# Initialized when starting a new game

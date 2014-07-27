@@ -231,12 +231,21 @@ class Hangman:
 
 	def loadFlags(self):
 		''' Loads all flag files and creates a map between those and their respective ISO language codes '''
-		codes = [('en-uk', 'UK.png'), ('es-es', 'Spain.png'), ('in', 'India.png'), ('sv', 'Sweden.png'), ('en-us', 'USA.png')] # Maps language codes to flags
+		codes = [('en-uk', 'UK.png'), ('es-es', 'Spain.png'), ('in', 'India.png'), ('sv-sv', 'Sweden.png'), ('en-us', 'USA.png')] # Maps language codes to flags
 		return { lang: ImageTk.PhotoImage(Image.open('data/flags/%s' % fn)) for lang, fn in codes } # TODO: Extract to separate method (✓)
+
+
+	def loadIcon(self, fn):
+		''' Loads and sets the title bar icon '''
+		icon = ImageTk.PhotoImage(Image.open(fn))
+		self.root.call('wm', 'iconphoto', self.root._w, icon)
+		return icon
 
 
 	def loadDictionaries(self, fn):
 		''' Loads JSON dictionary meta data '''
+		# TODO: Dot notation
+		# TODO: Load associated resources for convenience (?)
 		with open(fn, 'r') as dicts:
 			return json.load(dicts)
 
@@ -246,13 +255,6 @@ class Hangman:
 		self.log('Changing dictionary to %s' % name)
 		self.wordFeed = self.createWordFeed(name)
 		self.win() # Use win() method to restart for now
-
-
-	def loadIcon(self, fn):
-		''' Loads and sets the title bar icon '''
-		icon = ImageTk.PhotoImage(Image.open(fn))
-		self.root.call('wm', 'iconphoto', self.root._w, icon)
-		return icon
 
 
 	# TODO: Research Python annotation syntax

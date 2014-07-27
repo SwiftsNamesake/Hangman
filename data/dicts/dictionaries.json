@@ -53,6 +53,17 @@
 		"auth": "C.S. Bird & Associates",
 		"src": null,
 		"date": "July 25 2014"
+	},
+
+	"Klasssisk fysik": {
+		"file": "sv_fysik.txt",
+		"lang": "Swedish",
+		"iso": "sv-sv",
+		"desc": "Den klassiska fysikens vokabulär",
+
+		"auth": "Jonatan H Sundqvist",
+		"src": null,
+		"date": "July 28 2014"
 	}
 
 }
