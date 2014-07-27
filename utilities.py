@@ -11,12 +11,12 @@
 #		 - 
 
 
-import tkinter as tk
+import tkinter as tk #
 
-from SwiftUtils import extractTODOs
-from os import listdir
-from collections import namedtuple
-from math import sin, cos
+from SwiftUtils import extractTODOs # 
+from os import listdir 				# 
+from collections import namedtuple 	# 
+from math import sin, cos 			# 
 
 
 Rect = namedtuple('Rect', 'left top right bottom')

@@ -38,7 +38,7 @@ class Logic:
 	def __init__(self, chances):
 		self.chances = chances  # Wrong guesses allowed before losing
 		self.state 	 = None 	# Initialized when starting a new game
-		self.characterSet = ascii_uppercase # TODO: Implement character set support
+		self.characterSet = ascii_uppercase # TODO: Implement character set support (?)
 
 
 	def createState(self, word):

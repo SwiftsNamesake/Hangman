@@ -12,6 +12,7 @@
 #		 - Allow for settings, such as colours, sizes, positions, and the like
 #		 - Event handling facilities
 #		 - Create separate Text class with individually configurable letters (?)
+#		 - Excise characterSet (should be handled by main or input module)
 
 # SPEC | - Terminology
 #		 	-- Word object: (internally a namedtuple wrapping a Canvas id) (should be renamed)
@@ -23,10 +24,10 @@
 
 import tkinter as tk
 
-from utilities import rectangle, rotatedRect, Rect, Size
-from collections import namedtuple
-from math import radians
-from string import ascii_uppercase
+from utilities import rectangle, rotatedRect, Rect, Size 	#
+from collections import namedtuple 							#
+from math import radians 									#
+from string import ascii_uppercase 							#
 
 
 class Graphics:

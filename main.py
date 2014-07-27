@@ -20,6 +20,7 @@
 #		 - Disable console in release version
 #		 - Hints (...)
 #		 - Proper UI, menus (...)
+#		 	-- Generic variable trace closures (decorator?)
 #		 	-- Languages flags
 #		 	-- Timers, progress bars (?)
 #		 - Add quit method (sys.exit?)
@@ -85,10 +86,11 @@ class Hangman:
 		# Logging
 		self.messages = []
 
-		# Dictionaries
-		# TODO: Generic process-dictionaries method (?)
-		self.dictData  = self.loadDictionaries('data/dicts/dictionaries.json')
-		
+		# Resources
+		# TODO: Generic process-dictionaries method (✓)
+		self.dictData 	= self.loadDictionaries('data/dicts/dictionaries.json')
+		self.flags 		= self.loadFlags()
+
 		# Gameplay settings
 		self.restartDelay   = 2000 			 # Delay before new round begins (ms)
 		self.revealWhenLost = False			 # Reveal the word when the game is lost
@@ -151,22 +153,13 @@ class Hangman:
 
 		# Languages
 		languages 		 = tk.Menu(settings, tearoff=0)
-		languages.images = self.loadFlags() # TODO: Move image resources to init
-
-		# TODO: Generic variable trace closures (decorator?)
-		def changeDict(name):
-			def closure(*args):
-				self.log('Changing dictionary to %s' % name)
-				self.wordFeed = self.createWordFeed(name)
-				self.win() # Use win() method to restart for now
-			return closure
 
 		self.DICT.trace('w', lambda *args, var=self.DICT: self.setDictionary(var.get()))
 
 		# TODO: Use appropriate flag
 		for N, name in enumerate(self.dictData.keys()):
 			code = self.dictData[name]['iso'] # Language code is the first to characters in filename
-			languages.add_radiobutton(label=name, image=languages.images[code], compound='left', var=self.DICT, value=name)
+			languages.add_radiobutton(label=name, image=self.flags[code], compound='left', var=self.DICT, value=name)
 		else:
 			self.log('Found %d dictionaries.' % (N+1))
 
@@ -280,22 +273,24 @@ class Hangman:
 
 	def win(self):
 		''' Victorious feedback, schedules the next round '''
-		# TODO: Extract restart logic (✓)
 		self.log('Phew. You figured it out!')
-		self.validState = False # Disable guessing between rounds
 		self.effects.win.play()
-		self.root.after(self.restartDelay, self.restart) # TODO: Extract to restart method (?)
+		self.scheduleRestart()
 	
 	
 	def lose(self):
 		''' Failure feedback, schedules the next round '''
-		# TODO: Extract restart logic (✓)
-		# TODO: Show correct word before restarting
+		# TODO: Show correct word before restarting (?)
 		self.log('You\'ve been hanged. Requiescat in pace!')
-		self.validState = False # Disable guessing between rounds
 		self.effects.lose.play()
-		self.root.after(self.restartDelay, self.restart)
+		self.scheduleRestart()
 
+
+	def scheduleRestart(self):
+		''' Schedules a new round and disables guessing in the interim '''
+		self.validState = False # Disable guessing between rounds
+		self.root.after(self.restartDelay, self.restart)
+		
 
 	def restart(self):
 		'''  '''
@@ -315,7 +310,6 @@ class Hangman:
 		''' Exits the application '''
 		# TODO: Find a way to close Python
 		self.root.quit()
-		#exit(0)
 
 
 	def createWordFeed(self, name):
@@ -326,7 +320,6 @@ class Hangman:
 		with open('data/dicts/%s' %  fn, 'r', encoding='utf-8') as wordFile:
 			words = wordFile.read().split('\n')
 		while True:
-			#yield choice('treasury|laconic|forboding'.split('|'))
 			yield choice(words).split('|') # Word|Hint
 
 
