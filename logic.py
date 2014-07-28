@@ -29,7 +29,7 @@ from string import ascii_uppercase 	# Allowed characters (cf. SPEC)
 class Logic:
 	
 	'''
-	Docstring goes here
+	Implements a configurable Hangman game.
 
 	'''
 
@@ -40,7 +40,12 @@ class Logic:
 	
 
 	def __init__(self, chances):
-		''' '''
+
+		'''
+		Docstring goes here
+		
+		'''
+
 		#
 		self.chances = chances  # Wrong guesses allowed before losing
 		self.state 	 = None 	# Initialized when starting a new game

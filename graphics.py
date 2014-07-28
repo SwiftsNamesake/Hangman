@@ -32,10 +32,21 @@ from string import ascii_uppercase 							#
 
 class Graphics:
 
+	'''
+	Handles the drawing.
+
+	'''
+
 	Word = namedtuple('Word', ['word', 'id', 'pos', 'format']) # TODO: Rename, extract (?)
 
 	# High-level interface
 	def __init__(self, root, width, height, characterSet=ascii_uppercase):
+
+		'''
+		Docstring goes here
+		
+		'''
+		
 		# Initialize
 		self.canvas = tk.Canvas(width=width, height=height, background='white')
 		self.canvas.pack()

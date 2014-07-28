@@ -68,7 +68,15 @@ from inspect import currentframe, getouterframes, getframeinfo # Line numbers (f
 class Hangman:
 
 	'''
-	Doc goes here
+	This class provides the context for the
+	graphics and logic modules, as well as
+	handling input, menus, events and
+	resources.
+
+	The original intent was to let it serve
+	as a model-view controller, were Logic
+	represented the model and Graphics the
+	the main view.
 
 	'''
 
@@ -99,8 +107,8 @@ class Hangman:
 		self.revealWhenLost = False	# Reveal the word when the game is lost
 		
 		# TODO: Save reference to current dict (?)
-		self.DICT = tk.StringVar(value=choice(self.dictNames)) 				# Select random dictionary
-		self.characterSet = self.dictData[self.DICT.get()]['characters'] 	# TODO: Make this dictionary-dependent
+		self.DICT 			= tk.StringVar(value=choice(self.dictNames)) 	# Select random dictionary
+		self.characterSet 	= self.dictData[self.DICT.get()]['characters'] 	# TODO: Make this dictionary-dependent
 
 		# Menus
 		self.menubar = self.createMenus()
