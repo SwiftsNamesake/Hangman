@@ -1,0 +1,1965 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"charac",
+				"characterSet"
+			],
+			[
+				"ch",
+				"changeCharacterSet  (function)"
+			],
+			[
+				"cha",
+				"characterSet  (variable)"
+			],
+			[
+				"create",
+				"createAlphabet"
+			],
+			[
+				"chara",
+				"characterSet"
+			],
+			[
+				"sched",
+				"scheduleRestart"
+			],
+			[
+				"po",
+				"pointToScreenCoords"
+			],
+			[
+				"poin",
+				"pointToWorldCoords"
+			],
+			[
+				"scree",
+				"screenToWorld"
+			],
+			[
+				"ani",
+				"AnimationState"
+			],
+			[
+				"dur",
+				"durationArgs"
+			],
+			[
+				"ballo",
+				"balloonWidget"
+			],
+			[
+				"PyQ",
+				"PyQt4  (module)"
+			],
+			[
+				"a",
+				"chain  (class)"
+			],
+			[
+				"dict",
+				"dictionary"
+			],
+			[
+				"res",
+				"restartDelay"
+			],
+			[
+				"config",
+				"configurePart"
+			],
+			[
+				"con",
+				"configureText"
+			],
+			[
+				"n",
+				"normalize"
+			],
+			[
+				"su",
+				"sumMultiples"
+			],
+			[
+				"crea",
+				"createWordFeed"
+			],
+			[
+				"cla",
+				"classyMain"
+			],
+			[
+				"main",
+				"mainloop"
+			],
+			[
+				"gra",
+				"graphics"
+			],
+			[
+				"char",
+				"characterSet"
+			],
+			[
+				"as",
+				"ascii_uppercase  (variable)"
+			],
+			[
+				"alpha",
+				"alphabetDefaults"
+			],
+			[
+				"asci",
+				"ascii_letters  (variable)"
+			],
+			[
+				"ascii_i",
+				"ascii_lowercase  (variable)"
+			],
+			[
+				"ascii",
+				"ascii_uppercase  (variable)"
+			],
+			[
+				"bul",
+				"buildNext"
+			],
+			[
+				"le",
+				"configureLetter  (function)"
+			],
+			[
+				"conf",
+				"configureWord"
+			],
+			[
+				"named",
+				"namedtuple"
+			],
+			[
+				"create_",
+				"create_polygon"
+			],
+			[
+				"onda",
+				"ondragover"
+			],
+			[
+				"webkit-tra",
+				"webkit-transform"
+			],
+			[
+				"margi",
+				"margin-right"
+			],
+			[
+				"geth",
+				"gethostname  (function)"
+			],
+			[
+				"cre",
+				"createPlayer"
+			],
+			[
+				"col",
+				"columns"
+			],
+			[
+				"for",
+				"format"
+			],
+			[
+				"ali",
+				"alignment"
+			],
+			[
+				"replace",
+				"replacements"
+			],
+			[
+				"string",
+				"stringToDouble"
+			],
+			[
+				"jo",
+				"joinOn"
+			],
+			[
+				"try",
+				"try	Try/Except"
+			],
+			[
+				"key",
+				"keypresses"
+			],
+			[
+				"not",
+				"NotImplementedError"
+			],
+			[
+				"ele",
+				"elementAt	[a] -> Int -> a"
+			],
+			[
+				"cbo",
+				"cbottom"
+			],
+			[
+				"conto",
+				"contourColourBuffer"
+			],
+			[
+				"cont",
+				"contourColourBuffer"
+			],
+			[
+				"colours",
+				"colours"
+			],
+			[
+				"rot",
+				"rotSliders"
+			],
+			[
+				"to",
+				"toString"
+			],
+			[
+				"set",
+				"setVelocity"
+			],
+			[
+				"pyr",
+				"pyramidMesh"
+			],
+			[
+				"py",
+				"pyramidMesh"
+			],
+			[
+				"f",
+				"forv	Vector For Loop"
+			],
+			[
+				"ma",
+				"main	main()"
+			],
+			[
+				"pyra",
+				"pyramidMesh"
+			],
+			[
+				"colo",
+				"colourSize"
+			],
+			[
+				"arra",
+				"ARRAY_BUFFER"
+			],
+			[
+				"bin",
+				"bindBuffer"
+			],
+			[
+				"if",
+				"ifmain	if __name__ == '__main__'"
+			],
+			[
+				"sha",
+				"shaderProgram"
+			],
+			[
+				"pyram",
+				"pyramidVertices"
+			],
+			[
+				"vi",
+				"viewportHeight"
+			],
+			[
+				"vie",
+				"viewportWidth"
+			],
+			[
+				"numite",
+				"numItems"
+			],
+			[
+				"cubeI",
+				"cubeIndices"
+			],
+			[
+				"cubeVer",
+				"cubeVertexIndices"
+			],
+			[
+				"ar",
+				"ARRAY_BUFFER"
+			],
+			[
+				"bi",
+				"bindBuffer"
+			],
+			[
+				"replc",
+				"replacements"
+			],
+			[
+				"curr",
+				"currIndex"
+			],
+			[
+				"num",
+				"numframes"
+			],
+			[
+				"Rend",
+				"RenderSprite"
+			],
+			[
+				"Anim",
+				"AnimateSprite"
+			],
+			[
+				"Creat",
+				"CreateSprite"
+			],
+			[
+				"Col",
+				"CollideSprite"
+			],
+			[
+				"Handl",
+				"HandleInput"
+			],
+			[
+				"wi",
+				"WIDTH"
+			],
+			[
+				"fram",
+				"frameDelta"
+			],
+			[
+				"get",
+				"getBoundingBox"
+			],
+			[
+				"onMo",
+				"onMouseDown"
+			],
+			[
+				"Create",
+				"CreatePlatforms"
+			],
+			[
+				"text",
+				"textOptions"
+			],
+			[
+				"So",
+				"soundGenerator"
+			],
+			[
+				"p1",
+				"p1Collides"
+			],
+			[
+				"off",
+				"edgeOff"
+			],
+			[
+				"pla",
+				"player"
+			],
+			[
+				"samp",
+				"samples_per_second"
+			],
+			[
+				"sam",
+				"samples_per_second"
+			],
+			[
+				"hi",
+				"hitSound"
+			],
+			[
+				"frame",
+				"frameDelay"
+			],
+			[
+				"player",
+				"playerScores"
+			],
+			[
+				"nex",
+				"nextFrame"
+			],
+			[
+				"edge",
+				"edgeOff"
+			],
+			[
+				"escap",
+				"escapeUnicode"
+			],
+			[
+				"send",
+				"send_header"
+			],
+			[
+				"__",
+				"__init__"
+			],
+			[
+				"end",
+				"end_headers"
+			],
+			[
+				"BaseH",
+				"BaseHTTPRequestHandler"
+			],
+			[
+				"pri",
+				"printArray"
+			],
+			[
+				"great",
+				"greatIndex"
+			],
+			[
+				"prop",
+				"properties"
+			],
+			[
+				"init",
+				"initY"
+			],
+			[
+				"mov",
+				"mousemove"
+			],
+			[
+				"page",
+				"pageY"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"back-c",
+				"background-color"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"tra",
+				"trackMouse"
+			],
+			[
+				"cuve",
+				"cubeVertexIndexBuffer"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "main.py",
+			"settings":
+			{
+				"buffer_size": 11342,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "graphics.py",
+			"settings":
+			{
+				"buffer_size": 10942,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "logic.py",
+			"settings":
+			{
+				"buffer_size": 5141,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "utilities.py",
+			"settings":
+			{
+				"buffer_size": 5729,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"co",
+				"Git: Commit"
+			],
+			[
+				"add",
+				"Git: Add..."
+			],
+			[
+				"ad",
+				"Git: Add..."
+			],
+			[
+				"close",
+				"Project: Close"
+			],
+			[
+				"com",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"pro",
+				"Project: Add Folder"
+			],
+			[
+				"project",
+				"Project: Save As"
+			],
+			[
+				"proj",
+				"Project: Close"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"comm",
+				"Git: Commit"
+			],
+			[
+				"py",
+				"Set Syntax: PythonImproved"
+			],
+			[
+				"log",
+				"Git: Log Current File"
+			],
+			[
+				"diff",
+				"Git: Diff Current File"
+			],
+			[
+				"Diff",
+				"Git: Diff Current File"
+			],
+			[
+				"rege",
+				"Set Syntax: Regular Expression"
+			],
+			[
+				"impr",
+				"Set Syntax: PythonImproved"
+			],
+			[
+				"im",
+				"Set Syntax: PythonImproved"
+			],
+			[
+				"im	",
+				"Set Syntax: PythonImproved"
+			],
+			[
+				"IMPRO",
+				"Set Syntax: PythonImproved"
+			],
+			[
+				"impro",
+				"Set Syntax: PythonImproved"
+			],
+			[
+				"syntax: py",
+				"Set Syntax: PythonImproved"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"cust",
+				"Git: Custom Command"
+			],
+			[
+				"git",
+				"Git: Graph All"
+			],
+			[
+				"Co",
+				"Git: Commit"
+			],
+			[
+				"a",
+				"Git: Add..."
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"cu",
+				"Git: Custom Command"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"pu",
+				"Git: Push Current Branch"
+			],
+			[
+				"inde",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"di",
+				"Git: Diff Current File"
+			],
+			[
+				"d",
+				"Git: Document Selection"
+			],
+			[
+				"blame",
+				"Git: Blame"
+			],
+			[
+				"dif",
+				"Git: Diff Current File"
+			],
+			[
+				"pus",
+				"Git: Push Current Branch"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git b",
+				"Git: Blame"
+			],
+			[
+				"git p",
+				"Git: Push"
+			],
+			[
+				"git ",
+				"Git: Add..."
+			],
+			[
+				"gi",
+				"Git: Push"
+			],
+			[
+				"sett",
+				"Preferences: Settings - User"
+			],
+			[
+				"set syntax:c",
+				"Set Syntax: C"
+			],
+			[
+				"build ",
+				"Build: Build"
+			],
+			[
+				"hask",
+				"Set Syntax: Haskell"
+			],
+			[
+				"indent",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"stage",
+				"Git: Diff Staged Files"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"jav",
+				"Set Syntax: Java"
+			],
+			[
+				"re",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"user",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"key ",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"ke",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"got",
+				"Git: Custom Command"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"anno",
+				"Git: Toggle Annotations"
+			],
+			[
+				"commi",
+				"Git: Commit"
+			],
+			[
+				"settins",
+				"Preferences: Settings - Default"
+			],
+			[
+				"setti",
+				"Preferences: Settings - User"
+			],
+			[
+				"user ",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"bindi",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"i",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"pyt",
+				"Set Syntax: Python"
+			],
+			[
+				"plain",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"syntax: text",
+				"Set Syntax: Textile"
+			],
+			[
+				"has",
+				"Set Syntax: Haskell"
+			],
+			[
+				"in",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"min",
+				"View: Toggle Minimap"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"gl",
+				"Set Syntax: OpenGL SL"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"reposi",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"syntax c",
+				"Set Syntax: C"
+			],
+			[
+				"settings",
+				"Preferences: Settings - Default"
+			],
+			[
+				"snippet",
+				"Snippet: Object Value JS"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"tab",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"k",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"fold",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"folding",
+				"Code Folding: Unfold All"
+			],
+			[
+				"defa",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"us",
+				"Preferences: Settings - User"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"map",
+				"View: Toggle Minimap"
+			],
+			[
+				"prefe",
+				"Preferences: Settings - User"
+			],
+			[
+				"open",
+				"File: Open In Browser - Production Server"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"lint this",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"sublimelinter",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"sublimel",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"sublimeli",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"projec",
+				"Project: Save As"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"sublime",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"key bi",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"haskell",
+				"Set Syntax: Haskell"
+			],
+			[
+				"c",
+				"Set Syntax: C"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"JSON",
+				"Set Syntax: JSON"
+			],
+			[
+				"ftp",
+				"FTPSync: Setup FTPSync in this folder"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"op",
+				"View: Toggle Open Files in Side Bar"
+			]
+		],
+		"width": 536.0
+	},
+	"console":
+	{
+		"height": 481.0,
+		"history":
+		[
+			"view.run_command(\"insert_special_symbol\")",
+			"sublime.status_message(\"Arriving late\")",
+			"set_async_timeout(lambda: sublime.status_message(\"Arriving late\"), 1000)",
+			"sublime.set_async_timeout(lambda: sublime.status_message(\"Arriving late\"), 1000)",
+			"sublime.set_async_timeout(1000, lambda: sublime.status_message(\"Arriving late\"))",
+			"sublime",
+			"sublime.Settings.get(\"\")",
+			"sublime.Settings.get()",
+			"sublime.arch()",
+			"sublime.version()",
+			"print(sublime.get_clipboard())",
+			"sublime.get_clipboard()",
+			"sublime.get_clip_board()",
+			"print(\"\\n\".join(dir(sublime.windows()[0])))",
+			"print(\"\\n\".join(dir(sublime.windows()[0]))",
+			"dir(sublime.windows()[0])",
+			"sublime.windows()[0]",
+			"sublime.windows()",
+			"import sublime",
+			"view.windows()",
+			"windows()",
+			"view.run_command(\"example_command\")",
+			"view.run_command(\"insert_special_symbol\")",
+			"view.run_command(\"example_command\")",
+			"view.run_command(\"insert_special_symbol\")",
+			"name",
+			"view.run_command(\"insert_special_symbol\")",
+			"view.run_command(insert_special_symbol)",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/dictionaries.json",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/README.md",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/sv_fysik.txt",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/InsertSpecialSymbol.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/en_grandiloquent.txt",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/en_merriam-webster.txt",
+		"/C/Users/Jonatan/Desktop/Python/projects/Newtonian/test.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/TODO.md",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/Hangman.sublime-project",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/Hangman.py",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/Git/Git.sublime-settings",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Jonatan/Desktop/Python/regextest.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/SpecialSymbols/InsertSpecialSymbol.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/README.md",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/settings/README.md",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/animales.txt",
+		"/C/Users/Jonatan/Desktop/Python/projects/Pong.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/Newtonian/ed4a00de-9aba-4429-a228-78821bf9e32a.dmp",
+		"/C/Users/Jonatan/Desktop/Python/projects/Newtonian/.git/config",
+		"/C/Users/Jonatan/Desktop/Hemsida/index.html",
+		"/C/Users/Jonatan/Desktop/WebGL/First Person/FirstPerson.js",
+		"/C/Users/Jonatan/Desktop/WebGL/First Person/MatrixMath.js",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/TODO.txt",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/en_merriam_webster.txt",
+		"/C/Users/Jonatan/Desktop/Python/examples/PyQTBalloon.py",
+		"/C/Users/Jonatan/Desktop/Python/examples/SpellCheck.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/GUITestOne.py",
+		"/C/Users/Jonatan/Documents/My Games/Skyrim/SkyrimPrefs.ini",
+		"/C/Users/Jonatan/Desktop/Python/modules/SwiftUtils/SwiftUtils.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/main.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/en_dict_thetoohardforyouversion.txt",
+		"/C/Users/Jonatan/Desktop/Python/startup.py",
+		"/C/Users/Jonatan/Desktop/WebGL/First Person/Utilities.js",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/README.txt",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/LICENSE.txt",
+		"/C/Users/Jonatan/Desktop/Python/.gitignore",
+		"/C/Users/Jonatan/Desktop/Python/projects/Audiophile.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/AudioTest.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/PygletTest.py",
+		"/C/Users/Jonatan/Desktop/Project Euler/Answer",
+		"/C/Users/Jonatan/Desktop/Project Euler/Problem 1.hs",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Jonatan/Desktop/Project Euler/Problem 1.c",
+		"/C/Users/Jonatan/Desktop/Project Euler/Problem 10 (Prime Summation).hs",
+		"/C/Users/Jonatan/Desktop/Project Euler/Problem 10 (Prime Summation)",
+		"/C/Users/Jonatan/AppData/Roaming/.minecraft/assets/indexes/1.7.4.json",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/en_dict.txt",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/en_dict.txt",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/PythonPrompt.sublime-build",
+		"/C/Users/Jonatan/Desktop/WebGL/First Person/FirstPerson.sublime-project",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/Utilities.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/Main.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/Graphics.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/Logic.py",
+		"/C/Users/Jonatan/Desktop/Python/examples/CalcTutorial.py",
+		"/C/Users/Jonatan/Desktop/Java/examples/PixelRearrange.java",
+		"/C/Users/Jonatan/Dropbox/Norse Scenario (Aom)/Hangman.py",
+		"/C/Users/Jonatan/Desktop/Python/Hangman.py",
+		"/C/Users/Jonatan/Desktop/Hemsida/Projekt/Bildspel/bildspel.html",
+		"/C/Users/Jonatan/Desktop/Hemsida/Projekt/Bildspel/bildspel.css",
+		"/C/Users/Jonatan/Desktop/Hemsida/Projekt/Bildspel/bildspel.js",
+		"/C/Users/Jonatan/Desktop/Python/modules/SwiftUtils/__init__.py",
+		"/C/Users/Jonatan/Desktop/Python/Pong.py",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/PythonGUI.sublime-build",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/multiline.sublime-snippet",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Program Files/Sublime Text 3/Packages/HTML.sublime-package",
+		"/C/Users/Jonatan/Desktop/Minecraft 1.7.4 Server/server.properties",
+		"/C/Users/Jonatan/Desktop/Python/Cartographer.py",
+		"/C/Users/Jonatan/Desktop/Python/sockets.py",
+		"/C/Users/Jonatan/Desktop/Haskell/Haskell.hs",
+		"/C/Users/Jonatan/Desktop/Python/server.py",
+		"/C/Users/Jonatan/Desktop/Python/Consolidate.py",
+		"/C/Users/Jonatan/Desktop/WebGL/First Person/FirstPerson.css",
+		"/C/Users/Jonatan/Desktop/WebGL/First Person/FirstPerson.html",
+		"/C/Users/Jonatan/Desktop/Python/Audiophile.py",
+		"/C/Users/Jonatan/Desktop/Hemsida/favicon.ico",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/methodJS.sublime-snippet",
+		"/C/Program Files/Sublime Text 3/python3.3.zip",
+		"/C/Users/Jonatan/AppData/Roaming/ghc/ghci.conf",
+		"/C/Program Files/Sublime Text 3/sublime_plugin.py",
+		"/C/Program Files/Sublime Text 3/Packages/Python.sublime-package",
+		"/C/Users/Jonatan/Desktop/Python/2048.py",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/SublimeHaskell/autocomplete.py",
+		"/C/Users/Jonatan/Desktop/Python/HotSwapping.py",
+		"/C/Users/Jonatan/Desktop/Python/pythonStartup.py",
+		"/C/Users/Jonatan/Desktop/Hemsida/Exempel/snowfall.html",
+		"/C/Users/Jonatan/AppData/Roaming/.minecraft/saves/The Legionnaire/stats/43274c4b-d379-412f-8d3a-34f3c7889432.json",
+		"/C/Users/Jonatan/AppData/Roaming/.minecraft/saves/The Legionnaire/level.dat",
+		"/C/Users/Jonatan/AppData/Roaming/.minecraft/saves/The Legionnaire/playerdata/3a2a49db-4a64-4bc3-a2d2-02eafa6491e9.dat",
+		"/C/Users/Jonatan/AppData/Roaming/.minecraft/saves/The Legionnaire/players/SwiftsNamesake.dat",
+		"/C/Users/Jonatan/AppData/Roaming/.minecraft/usercache.json",
+		"/C/Users/Jonatan/Desktop/Python/examples/MontyHall.py",
+		"/C/Users/Jonatan/Desktop/Python/ImageGrid.py",
+		"/C/Users/Jonatan/Desktop/Haskell/examples/Blink/blink.hs",
+		"/C/Users/Jonatan/Desktop/Haskell/examples/Blink/transformers.hs",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 2/Packages/UnicodeMath/UnicodeMath.sublime-settings",
+		"/C/Users/Jonatan/Desktop/Python/AsciiSchmascii.py",
+		"/C/Users/Jonatan/Desktop/Haskell/examples/StackOverflow/PythonVsAll.py",
+		"/C/Users/Jonatan/Desktop/Haskell/    Illegal tuple section",
+		"/C/Users/Jonatan/Desktop/Haskell/config/startupconfig.ghci",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/WinMain.sublime-snippet",
+		"/C/Users/Jonatan/Desktop/Haskell/temp8444",
+		"/C/Users/Jonatan/Desktop/Haskell/temp6820",
+		"/C/Users/Jonatan/Desktop/Haskell/HelloGUI.hs",
+		"/C/Users/Jonatan/Desktop/Haskell/Utilities.hs",
+		"/C/Users/Jonatan/Desktop/Haskell/Classy Haskell.hs",
+		"/C/Users/Jonatan/AppData/Roaming/cabal/base-unicode-symbols-0.2.2.4/ghc-7.6.3/Prelude/Unicode.hi",
+		"/C/Users/Jonatan/AppData/Roaming/cabal/config",
+		"/C/Users/Jonatan/AppData/Roaming/ghc/i386-mingw32-7.6.3/package.conf.d/yaml-0.8.5.2-ad1e3733e70facbc7bbf59925cb170e8.conf",
+		"/C/Users/Jonatan/AppData/Roaming/ghc/i386-mingw32-7.6.3/package.conf.d/ghc-mod-3.1.4-ef15a0dac469828c1aa7c6203a43c128.conf",
+		"/C/Users/Jonatan/AppData/Roaming/ghc/i386-mingw32-7.6.3/package.conf.d/mmorph-1.0.0-601ef4deb3a4f2791d8b51b617ba73fa.conf",
+		"/C/Users/Jonatan/Desktop/WebGL/ftpsync.settings",
+		"/C/Users/Jonatan/Desktop/Java/examples/ButtonDemo.java",
+		"/C/Users/Jonatan/Desktop/Java/examples/ButtonDemo.class",
+		"/C/Users/Jonatan/Desktop/Chrome/The Merger/source.js",
+		"/C/Users/Jonatan/AppData/Roaming/ghc/i386-mingw32-7.6.3/package.conf.d/base-unicode-symbols-0.2.2.4-d8e60516914ea13736870f40778c5ac1.conf",
+		"/C/Users/Jonatan/Desktop/Python/examples/sockets.py",
+		"/C/Users/Jonatan/Desktop/Haskell/Ninety-Nine.hs",
+		"/C/Users/Jonatan/Desktop/WebGL/First Person/vertexshader.txt",
+		"/C/Users/Jonatan/Desktop/WebGL/First Person/pixelshader.txt",
+		"/C/Users/Jonatan/Downloads/curses-2.2-source/curses-2.2/py33/_curses_panel.c",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/Jonatan/Desktop/C++/C/Files.c",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/PureC.sublime-build",
+		"/C/Users/Jonatan/Desktop/Python/greekSymbols.txt"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"loaddict",
+			"loaddic",
+			"characterset",
+			"charac",
+			"newSet",
+			"characters",
+			"N",
+			"ascii_uppercase",
+			"resources",
+			"quit",
+			"|",
+			"â€™",
+			" - ",
+			"error",
+			"debu",
+			"win",
+			"mixer",
+			"trace",
+			"createWordFeed",
+			"fn",
+			"fname",
+			"2",
+			"600",
+			"650",
+			"400",
+			"validguess",
+			"createme",
+			"400",
+			"650",
+			"400",
+			"650",
+			"createWindow",
+			"400",
+			"650",
+			"400",
+			"alphabetde",
+			"print",
+			"dt",
+			"dy",
+			"tCollision",
+			"real",
+			"complex",
+			"imag",
+			"tCollision",
+			"P.imag+S.imag-G",
+			"abs(A.imag)",
+			"92",
+			"abs(A.imag)",
+			"tColl",
+			"A.imag",
+			"print",
+			"tCollision",
+			"axes",
+			"setSelected",
+			"ball",
+			"*1+",
+			"*1",
+			"0.7",
+			"1j",
+			"20",
+			"^",
+			"8",
+			"<",
+			"6",
+			"<",
+			"format",
+			"0",
+			"dtS",
+			"simDt",
+			"dt",
+			"FPS",
+			"vec",
+			"state.S",
+			"state.P",
+			"n",
+			"state.P",
+			"0",
+			"pointToScreenCoords",
+			"state",
+			"pointToScreenCoords",
+			"state.",
+			"Screen",
+			"closure",
+			")\n",
+			".",
+			"acc",
+			")",
+			"sign",
+			"MAX",
+			"d",
+			".",
+			".2f",
+			"%",
+			"%.2f",
+			"printCoords",
+			"print",
+			"0",
+			"2",
+			"tk.canvas",
+			"canvas",
+			"outline=",
+			", border=",
+			", bord",
+			", bo",
+			", b",
+			"border",
+			"A",
+			"MAX",
+			"count'",
+			"count",
+			"dictionary",
+			"wordFeed",
+			"loadDict",
+			"data/dicts",
+			"self.dictdata",
+			"self.dictadata",
+			"self.wordlists",
+			"D",
+			"fn",
+			"loadDi",
+			"language",
+			"self.images",
+			"\"lang\": \"English\",",
+			"\"desc\": null,",
+			"auth",
+			"a",
+			"\"\"",
+			"auth"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"=",
+			"amp",
+			"'",
+			"/",
+			"'\\1:', \\1,",
+			"delta",
+			"'",
+			"\\n\\t\\t\\t\\t\\tsnow[i]",
+			"\\n\\t\\tvar",
+			"\\t\\t\\nvar",
+			"\\r\\nvar",
+			"lambda",
+			"print \\(\\1\\)\\n",
+			"print \\(\\1\\)",
+			"print \\(\\0\\)",
+			"/",
+			" "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11342,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2654,
+								2654
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1319.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "graphics.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10942,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8648,
+								8648
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3807.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "logic.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5141,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1653,
+								1653
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 539.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "utilities.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5729,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5386,
+								5386
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 325.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 124.0
+	},
+	"output.haskell_error_checker":
+	{
+		"height": 323.0
+	},
+	"project": "Hangman.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"re",
+				"README.md"
+			],
+			[
+				"htm",
+				"FirstPerson.html"
+			],
+			[
+				"",
+				"FirstPerson.js"
+			],
+			[
+				"ind",
+				"C:\\Users\\Jonatan\\Desktop\\Hemsida\\index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\Jonatan\\Desktop\\The Synthesis Project\\Synthesis.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 166.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

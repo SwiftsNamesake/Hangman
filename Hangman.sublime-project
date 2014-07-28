@@ -1,0 +1,11 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "../Hangman",
+			"name": "Hangman",
+			"file_exclude_patterns": ["hangman.py", "__pycache__", "*.pdn", "*.png"]
+		}
+	]
+}

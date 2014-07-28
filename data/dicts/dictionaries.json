@@ -1,0 +1,81 @@
+{
+
+	"Merriam-Webster": {
+		"file": "en_merriam-webster.txt",
+		"lang": "English",
+		"iso": "en-us",
+		"desc": null,
+
+		"characters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+
+		"auth": "www.merriam-webster.com",
+		"src": null,
+		"date": "July 7 2014"
+	},
+
+	"Jayant's Crucible": {
+		"file": "en_dict_thetoohardforyouversion.txt",
+		"lang": "English",
+		"iso": "en-uk",
+		"desc": null,
+
+		"characters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+
+		"auth": "Jayant Shivarajan",
+		"src": null,
+		"date": "July 7 2014"
+	},
+
+	"Test": {
+		"file": "en_dict.txt",
+		"lang": "English",
+		"iso": "en-uk",
+		"desc": null,
+
+		"characters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",		
+		
+		"auth": "Jonatan Sundqvist",
+		"src": null,
+		"date": "July 7 2014"
+	},
+
+	"Animales": {
+		"file": "animales.txt",
+		"lang": "Spanish",
+		"iso": "es-es",
+		"desc": null,
+
+		"characters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+
+		"auth": "Jonatan Sundqvist",
+		"src": null,
+		"date": "July 7 2014"
+	},
+
+	"Grandiloquent": {
+		"file": "en_grandiloquent.txt",
+		"lang": "English",
+		"iso": "en-uk",
+		"desc": null,
+
+		"characters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+
+		"auth": "C.S. Bird & Associates",
+		"src": null,
+		"date": "July 25 2014"
+	},
+
+	"Klassisk fysik": {
+		"file": "sv_fysik.txt",
+		"lang": "Swedish",
+		"iso": "sv-sv",
+		"desc": "Den klassiska fysikens vokabulär",
+
+		"characters": "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ",
+
+		"auth": "Jonatan H Sundqvist",
+		"src": null,
+		"date": "July 28 2014"
+	}
+
+}
