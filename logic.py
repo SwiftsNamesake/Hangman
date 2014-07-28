@@ -6,8 +6,8 @@
 
 # TODO | - Add test suite in main (?)
 #		 - Debugging, logging, assertions
-#		 - Support for whitespace, Unicode
-#		 	-- Revealed by default, toggled by setting
+#		 - Support for whitespace, punctuation, Unicode
+#		 	-- Whitespace and puncuation should be revealed by default, toggled by setting
 #		 - Validate input in this module (✗)
 #		 	-- This module should not concern itself with character sets
 #		 - Query functions (unguessed, wrong, correct, etc.)

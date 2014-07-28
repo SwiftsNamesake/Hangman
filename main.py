@@ -8,6 +8,7 @@
 # TODO | - Dictionary databases (sqlite3, JSON?)
 #		 	-- Logophile class (?)
 #		 - Validate input, words (length, characters, 26 - Unique ≥ Chances,  etc.)
+#		 	-- Proper character set handling (adapt to dictionary, allow Unicode, etc.)
 #		 - Complete and thorough documentation (tutorial, rule book, readme?)
 #		 - Robustness, debugging, error handling
 #		 	-- Dependency check
@@ -88,14 +89,15 @@ class Hangman:
 
 		# Resources
 		self.dictData 	= self.loadDictionaries('data/dicts/dictionaries.json')
+		self.dictNames 	= [name for name in self.dictData.keys()]
 		self.flags 		= self.loadFlags()
 
 		# Gameplay settings
-		self.restartDelay   = 2000 			 # Delay before new round begins (ms)
-		self.revealWhenLost = False			 # Reveal the word when the game is lost
+		self.restartDelay   = 2000 	# Delay before new round begins (ms)
+		self.revealWhenLost = False	# Reveal the word when the game is lost
 		
-		self.DICT = tk.StringVar(value=next(iter(self.dictData.keys()))) # Currently selected dictionary (file name) # TODO: Clean this up
-		#self.wordLists = 'data/dicts/%s' % self.dictData[name]['file'] for name in self.dictData.keys() } # Dictionary file URIs
+		self.characterSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ' 	# TODO: Make this dictionary-dependent
+		self.DICT = tk.StringVar(value=choice(self.dictNames)) 	# Select random dictionary
 
 		# Menus
 		self.menubar = self.createMenus()
@@ -191,7 +193,7 @@ class Hangman:
 
 	def onKeyDown(self, event):
 		''' '''
-		# TODO: Make sure guesses can't be made in a transitory state
+		# TODO: Make sure guesses can't be made in a transitory state (✓)
 		# Validate the guess
 
 		# Make sure the game is in a valid state (eg. not between to rounds)
@@ -199,7 +201,7 @@ class Hangman:
 			self.log('Cannot accept guesses right now')
 			return
 
-		if not (event.char in ascii_letters) or len(event.char) != 1:
+		if not (event.char in ascii_letters + 'åäö') or len(event.char) != 1: # TODO: Temporary fix for Swedish words
 			self.log('Invalid guess \'%s\'' % event.char)
 			return
 
@@ -246,7 +248,7 @@ class Hangman:
 		''' Sets the dictionary specified by the name '''
 		self.log('Changing dictionary to %s' % name)
 		self.wordFeed = self.createWordFeed(name)
-		self.win() # Use win() method to restart for now
+		self.scheduleRestart()
 
 
 	# TODO: Research Python annotation syntax
@@ -323,7 +325,7 @@ class Hangman:
 
 
 	def log(self, *args, identify=True, **kwargs):
-		''' Prints any number of messages to stdout, with optional context (class name, line number) '''
+		''' Prints any number of messages, with optional context (class name, line number) '''
 		# TODO: Make instance-setting (✓)
 		# TODO: Different categories (eg. error, log, feedback)
 		if self.DEBUG.get():

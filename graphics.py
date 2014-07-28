@@ -12,7 +12,7 @@
 #		 - Allow for settings, such as colours, sizes, positions, and the like
 #		 - Event handling facilities
 #		 - Create separate Text class with individually configurable letters (?)
-#		 - Excise characterSet (should be handled by main or input module)
+#		 - Allow for generic characterSets
 
 # SPEC | - Terminology
 #		 	-- Word object: (internally a namedtuple wrapping a Canvas id) (should be renamed)
@@ -22,7 +22,7 @@
 #		 	-- Canvas: (internally a tkinter object used for drawing)
 
 
-import tkinter as tk
+import tkinter as tk #
 
 from utilities import rectangle, rotatedRect, Rect, Size 	#
 from collections import namedtuple 							#
@@ -54,7 +54,7 @@ class Graphics:
 		# 
 		self.parts = self.createParts()			# Initially hidden
 		self.feed = self.nextPart()				# Initialize parts generator
-		self.characterSet = ascii_uppercase		# Allowed characters
+		self.characterSet = ascii_uppercase + 'ÅÄÖ'		# Allowed characters # TODO: Temporary fix for Swedish letters
 		self.alphabet = self.createAlphabet()	# Shows which letters have been guessed
 
 		# Word
