@@ -28,7 +28,8 @@
 #		 - Statistics, difficulty, profiles, remember state
 #		 - Decide if chances should be determined by graphics
 #		 - Loading settings (JSON?)
-#		 	-- Extract settings from createMenu, hook up menu items to settings
+#		 	-- Extract settings from createMenu, hook up menu items to settings (...)
+#		 	-- Implement setting files, extract strings, allow different UI languages
 #		 - Learn Git, move Hangman class to Hangman.py (...)
 #		 - Improve asset management
 #		 	-- Making it less fragile by storing location of each asset type
