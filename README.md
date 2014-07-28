@@ -1,4 +1,12 @@
 Hangman
 =======
 
-A simple Hangman implementation
+A simple Hangman implementation.
+
+#### Requirements
+* Pygame (audio)
+* Pillow (icons)
+
+-------
+
+_Jonatan H Sundqvist_
