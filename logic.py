@@ -73,8 +73,8 @@ class Logic:
 		])(word, set(self.normalize(word)), 0, set(), set(), set(), Logic.Phases.ONGOING)
 
 
-	def newGame(self, word):
-		''' Create a new game and replace the previous one '''
+	def new(self, word):
+		''' Creates a new game and replaces the previous one '''
 		# TODO: Find a more appropriate name
 		self.state = self.createState(word) # Replace the old state
 		
@@ -84,6 +84,7 @@ class Logic:
 
 
 	def guess(self, letter):
+
 		''' '''
 		
 		# TODO: Deal with repeated guesses, winning and losing (...)

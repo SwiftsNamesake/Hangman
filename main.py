@@ -43,6 +43,8 @@
 #		 - Look into function annotations (optional type checking?)
 #		 	-- cf. inspect.getarcspec
 #		 - PyQT (?)
+#		 - Fix noticeable resize delay (hide window?)
+
 
 # SPEC | -
 #		 - 
@@ -343,7 +345,7 @@ class Hangman:
 		self.word, self.hint = next(self.wordFeed)
 		self.graphics.showHint(self.hint)
 
-		self.logic.newGame(self.word)
+		self.logic.new(self.word)
 		self.graphics.play(str(self.logic))
 
 		self.validState = True # Ready to accept guesses again
