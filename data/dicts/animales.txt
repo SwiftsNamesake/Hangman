@@ -4,3 +4,6 @@ caballo|Relinchador
 burro|Muy tenaz
 lince|Gato boreal
 cuervo|Puede volar
+buitre|Planea sobre los desamparados
+conejo|Roedor domesticado
+cigüeña|Reparte los niños

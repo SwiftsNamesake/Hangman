@@ -24,10 +24,10 @@
 
 import tkinter as tk #
 
-from utilities import rectangle, rotatedRect, Rect, Size 	#
-from collections import namedtuple 							#
-from math import radians 									#
-from string import ascii_uppercase 							#
+from utilities import rectangle, rotatedRect, createLogger, Rect, Size 	#
+from collections import namedtuple 										#
+from math import radians 												#
+from string import ascii_uppercase 										#
 
 
 class Graphics:
@@ -52,13 +52,18 @@ class Graphics:
 		self.canvas.pack()
 		self.size = Size(width, height)
 
+		# Logging
+		self.messages 	= []
+		self.DEBUG 		= tk.BooleanVar(value=True)
+		self.log 		= createLogger('Graphics', self.DEBUG, self.messages)
+
 		# All parts in the correct order
 		self.order = ('mound', 'pole', 'beam', 'corbel', 'rope', 'head', 'torso', 'LArm', 'RArm', 'LLeg', 'RLeg', 'noose')
 		self.chances = len(self.order)
 
 		# Styling
 		# TODO: Extract defaults (?)
-		self.wordDefaults 	  = {'anchor': tk.NW, 'width': self.size.width-20, 'fill': '#EE2233', 'font': 'Lucida 20'} 	 # Default formatting for word
+		self.wordDefaults 	  = {'anchor': tk.NW, 'width': self.size.width-20, 'fill': '#EE2233', 'font': 'Lucida 20'} 	 # Default formatting for words
 		self.alphabetDefaults = {'anchor': tk.SW, 'width': self.size.width-20, 'fill': '#000', 'font': 'Lucida 10 bold'} # Default formatting for alphabet letters
 		self.hintDefaults 	  = {'anchor': tk.NW, 'width': self.size.width-20, 'fill': '#000', 'font': 'Helvetica 10'} 	 # Default formatting for hints
 
@@ -228,7 +233,7 @@ class Graphics:
 		''' Changes the character set and updates the alphabet  '''
 		# TODO: Use tags and helper function (?)
 		if self.characterSet != characterSet:
-			self.log('Changing characterSet to %s!' % characterSet)
+			self.log('Changing character set to %s!' % characterSet)
 			self.characterSet = characterSet
 			for key, value in self.alphabet.items():
 				self.canvas.delete(value.id)
@@ -291,11 +296,11 @@ class Graphics:
 		self.canvas.itemconfig(txt.id, **options)
 
 
-	def log(self, *args, **kwargs):
-		''' '''
-		DEBUG = True # TODO: Make instance-setting
-		if DEBUG:
-			print('(Graphics) ', *args, **kwargs)
+	# def log(self, *args, **kwargs):
+	# 	''' '''
+	# 	DEBUG = True # TODO: Make instance-setting
+	# 	if DEBUG:
+	# 		print('(Graphics) ', *args, **kwargs)
 
 
 

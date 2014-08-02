@@ -18,6 +18,8 @@ from os import listdir 				#
 from collections import namedtuple 	# 
 from math import sin, cos 			# 
 
+from inspect import currentframe, getouterframes, getframeinfo # Line numbers (for logging)
+
 
 Rect = namedtuple('Rect', 'left top right bottom')
 Size = namedtuple('Size', 'width height')
@@ -71,6 +73,28 @@ def updateTODOList():
 			return '[**[%d]**](%s "View") %s' % (N, repo % (fn, N), TODO)
 		extractTODOs(fn, 'TODO.md', append=(N>0), callback=callback, end='  \n')
 	print('Found %d TODO items' % count['total'])
+
+
+def createLogger(classname, variable, messages):
+
+	''' Creates a logging function '''
+
+	# TODO: Allow for some flexibility
+	# TODO: Make it a decorator (?)
+
+	def log(*args, identify=True, **kwargs):
+		''' Prints any number of messages, with optional context (class name, line number) '''
+		# TODO: Make instance-setting (✓)
+		# TODO: Different categories (eg. error, log, feedback)
+		if variable.get():
+			print('(%s) [%s] ' % (classname, getouterframes(currentframe())[1][2]) if identify else '', end='')
+			print(*args, **kwargs)
+
+		for msg in args:
+			messages.append(msg)
+
+	return log
+
 
 class Text:
 

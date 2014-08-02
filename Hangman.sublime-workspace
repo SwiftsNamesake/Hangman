@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"set",
+				"setForeground"
+			],
+			[
+				"setC",
+				"setCursorPosition"
+			],
+			[
+				"col",
+				"colourPrint"
+			],
+			[
+				"consol",
+				"consoleClosure"
+			],
+			[
 				"charac",
 				"characterSet"
 			],
@@ -164,10 +180,6 @@
 				"createPlayer"
 			],
 			[
-				"col",
-				"columns"
-			],
-			[
 				"for",
 				"format"
 			],
@@ -226,10 +238,6 @@
 			[
 				"to",
 				"toString"
-			],
-			[
-				"set",
-				"setVelocity"
 			],
 			[
 				"pyr",
@@ -483,7 +491,7 @@
 			"file": "main.py",
 			"settings":
 			{
-				"buffer_size": 11342,
+				"buffer_size": 11521,
 				"line_ending": "Windows"
 			}
 		},
@@ -491,7 +499,7 @@
 			"file": "graphics.py",
 			"settings":
 			{
-				"buffer_size": 10942,
+				"buffer_size": 11197,
 				"line_ending": "Windows"
 			}
 		},
@@ -499,7 +507,7 @@
 			"file": "logic.py",
 			"settings":
 			{
-				"buffer_size": 5141,
+				"buffer_size": 5190,
 				"line_ending": "Windows"
 			}
 		},
@@ -507,7 +515,7 @@
 			"file": "utilities.py",
 			"settings":
 			{
-				"buffer_size": 5729,
+				"buffer_size": 6414,
 				"line_ending": "Windows"
 			}
 		}
@@ -518,6 +526,34 @@
 		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"clo",
+				"Project: Close"
+			],
+			[
+				"haske",
+				"Set Syntax: Haskell"
+			],
+			[
+				"settings",
+				"Preferences: Settings - User"
+			],
+			[
+				"pref",
+				"Preferences: Settings - Default"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"cl",
+				"Project: Close"
+			],
+			[
+				"pro",
+				"Project: Close"
+			],
 			[
 				"co",
 				"Git: Commit"
@@ -543,20 +579,12 @@
 				"Git: Add Current File"
 			],
 			[
-				"pro",
-				"Project: Add Folder"
-			],
-			[
 				"project",
 				"Project: Save As"
 			],
 			[
 				"proj",
 				"Project: Close"
-			],
-			[
-				"key",
-				"Preferences: Key Bindings - Default"
 			],
 			[
 				"comm",
@@ -835,10 +863,6 @@
 				"Set Syntax: C"
 			],
 			[
-				"settings",
-				"Preferences: Settings - Default"
-			],
-			[
 				"snippet",
 				"Snippet: Object Value JS"
 			],
@@ -1008,25 +1032,42 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Jonatan/Desktop/Haskell/examples/Unicode/byteStringPrint.hs",
+		"/C/Users/Jonatan/Desktop/Haskell/Haskell.hs",
 		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/dictionaries.json",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/animales.txt",
+		"/C/Users/Jonatan/Desktop/Python/experiments/DandyConsole.py",
 		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/README.md",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/en_merriam-webster.txt",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/audio/strangled.wav",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/audio/ding.wav",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/TODO.md",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/Hangman.sublime-project",
+		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/LICENSE",
+		"/C/Users/Jonatan/Desktop/Python/projects/Newtonian/jay.py",
+		"/C/Users/Jonatan/Desktop/Python/PythonChallenges/Pickle.py",
+		"/C/Users/Jonatan/Desktop/Python/PythonChallenges/Smarty.py",
+		"/C/Users/Jonatan/Desktop/Python/PythonChallenges/PythonChallenge.py",
+		"/C/Users/Jonatan/Desktop/Python/PythonChallenges/Zip.py",
+		"/C/Users/Jonatan/Desktop/Python/PythonChallenges/MissingLink.py",
+		"/C/Users/Jonatan/Desktop/Python/PythonChallenges/ReturnOfEvil.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/AudioTest.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/Audiophile.py",
+		"/C/Users/Jonatan/Desktop/Python/projects/Pong.py",
 		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/sv_fysik.txt",
 		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/InsertSpecialSymbol.py",
 		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/en_grandiloquent.txt",
-		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/en_merriam-webster.txt",
 		"/C/Users/Jonatan/Desktop/Python/projects/Newtonian/test.py",
-		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/TODO.md",
-		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/Hangman.sublime-project",
 		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/Hangman.py",
 		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/Git/Git.sublime-settings",
-		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
 		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/Jonatan/Desktop/Python/regextest.py",
 		"/C/Users/Jonatan/Desktop/Python/projects/SpecialSymbols/InsertSpecialSymbol.py",
 		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/README.md",
 		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/settings/README.md",
-		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/data/dicts/animales.txt",
-		"/C/Users/Jonatan/Desktop/Python/projects/Pong.py",
 		"/C/Users/Jonatan/Desktop/Python/projects/Newtonian/ed4a00de-9aba-4429-a228-78821bf9e32a.dmp",
 		"/C/Users/Jonatan/Desktop/Python/projects/Newtonian/.git/config",
 		"/C/Users/Jonatan/Desktop/Hemsida/index.html",
@@ -1046,12 +1087,9 @@
 		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/README.txt",
 		"/C/Users/Jonatan/Desktop/Python/projects/Hangman/LICENSE.txt",
 		"/C/Users/Jonatan/Desktop/Python/.gitignore",
-		"/C/Users/Jonatan/Desktop/Python/projects/Audiophile.py",
-		"/C/Users/Jonatan/Desktop/Python/projects/AudioTest.py",
 		"/C/Users/Jonatan/Desktop/Python/projects/PygletTest.py",
 		"/C/Users/Jonatan/Desktop/Project Euler/Answer",
 		"/C/Users/Jonatan/Desktop/Project Euler/Problem 1.hs",
-		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Jonatan/Desktop/Project Euler/Problem 1.c",
 		"/C/Users/Jonatan/Desktop/Project Euler/Problem 10 (Prime Summation).hs",
 		"/C/Users/Jonatan/Desktop/Project Euler/Problem 10 (Prime Summation)",
@@ -1075,12 +1113,10 @@
 		"/C/Users/Jonatan/Desktop/Python/Pong.py",
 		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/PythonGUI.sublime-build",
 		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/multiline.sublime-snippet",
-		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Program Files/Sublime Text 3/Packages/HTML.sublime-package",
 		"/C/Users/Jonatan/Desktop/Minecraft 1.7.4 Server/server.properties",
 		"/C/Users/Jonatan/Desktop/Python/Cartographer.py",
 		"/C/Users/Jonatan/Desktop/Python/sockets.py",
-		"/C/Users/Jonatan/Desktop/Haskell/Haskell.hs",
 		"/C/Users/Jonatan/Desktop/Python/server.py",
 		"/C/Users/Jonatan/Desktop/Python/Consolidate.py",
 		"/C/Users/Jonatan/Desktop/WebGL/First Person/FirstPerson.css",
@@ -1123,19 +1159,7 @@
 		"/C/Users/Jonatan/AppData/Roaming/ghc/i386-mingw32-7.6.3/package.conf.d/ghc-mod-3.1.4-ef15a0dac469828c1aa7c6203a43c128.conf",
 		"/C/Users/Jonatan/AppData/Roaming/ghc/i386-mingw32-7.6.3/package.conf.d/mmorph-1.0.0-601ef4deb3a4f2791d8b51b617ba73fa.conf",
 		"/C/Users/Jonatan/Desktop/WebGL/ftpsync.settings",
-		"/C/Users/Jonatan/Desktop/Java/examples/ButtonDemo.java",
-		"/C/Users/Jonatan/Desktop/Java/examples/ButtonDemo.class",
-		"/C/Users/Jonatan/Desktop/Chrome/The Merger/source.js",
-		"/C/Users/Jonatan/AppData/Roaming/ghc/i386-mingw32-7.6.3/package.conf.d/base-unicode-symbols-0.2.2.4-d8e60516914ea13736870f40778c5ac1.conf",
-		"/C/Users/Jonatan/Desktop/Python/examples/sockets.py",
-		"/C/Users/Jonatan/Desktop/Haskell/Ninety-Nine.hs",
-		"/C/Users/Jonatan/Desktop/WebGL/First Person/vertexshader.txt",
-		"/C/Users/Jonatan/Desktop/WebGL/First Person/pixelshader.txt",
-		"/C/Users/Jonatan/Downloads/curses-2.2-source/curses-2.2/py33/_curses_panel.c",
-		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
-		"/C/Users/Jonatan/Desktop/C++/C/Files.c",
-		"/C/Users/Jonatan/AppData/Roaming/Sublime Text 3/Packages/User/PureC.sublime-build",
-		"/C/Users/Jonatan/Desktop/Python/greekSymbols.txt"
+		"/C/Users/Jonatan/Desktop/Java/examples/ButtonDemo.java"
 	],
 	"find":
 	{
@@ -1153,6 +1177,57 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\\U",
+			"u",
+			"U",
+			"self.log",
+			"█",
+			"putColoured",
+			"setBackground",
+			"40",
+			"relative=",
+			"[",
+			"pos.imag",
+			"pos.real",
+			"setCursorPosition",
+			"setCursor",
+			"return",
+			"if",
+			"x",
+			":",
+			"Y i",
+			"Y",
+			"steps)]",
+			"steps)",
+			"steps",
+			"return",
+			"range",
+			"(",
+			"x, y, ",
+			"+,",
+			"setting",
+			"c_int",
+			"phrase",
+			"colourPrint",
+			"hStdout",
+			"State",
+			"\\r",
+			"' ",
+			" ",
+			"+'\\r'",
+			"\\n",
+			"(word",
+			"=",
+			"state",
+			"hStdout",
+			"+",
+			"    ",
+			"clr",
+			"pass",
+			"color",
+			"std_output_hdl",
+			"STD_OUTPUT_HANDLE_ID",
+			" \n",
 			"loaddict",
 			"loaddic",
 			"characterset",
@@ -1229,63 +1304,12 @@
 			"state.P",
 			"n",
 			"state.P",
-			"0",
-			"pointToScreenCoords",
-			"state",
-			"pointToScreenCoords",
-			"state.",
-			"Screen",
-			"closure",
-			")\n",
-			".",
-			"acc",
-			")",
-			"sign",
-			"MAX",
-			"d",
-			".",
-			".2f",
-			"%",
-			"%.2f",
-			"printCoords",
-			"print",
-			"0",
-			"2",
-			"tk.canvas",
-			"canvas",
-			"outline=",
-			", border=",
-			", bord",
-			", bo",
-			", b",
-			"border",
-			"A",
-			"MAX",
-			"count'",
-			"count",
-			"dictionary",
-			"wordFeed",
-			"loadDict",
-			"data/dicts",
-			"self.dictdata",
-			"self.dictadata",
-			"self.wordlists",
-			"D",
-			"fn",
-			"loadDi",
-			"language",
-			"self.images",
-			"\"lang\": \"English\",",
-			"\"desc\": null,",
-			"auth",
-			"a",
-			"\"\"",
-			"auth"
+			"0"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
 			"=",
@@ -1324,15 +1348,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11342,
+						"buffer_size": 11521,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2654,
-								2654
+								881,
+								881
 							]
 						],
 						"settings":
@@ -1445,7 +1469,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1319.0,
+						"translation.y": 120.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1457,15 +1481,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10942,
+						"buffer_size": 11197,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8648,
-								8648
+								8754,
+								8754
 							]
 						],
 						"settings":
@@ -1578,10 +1602,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3807.0,
+						"translation.y": 4185.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1590,15 +1614,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5141,
+						"buffer_size": 5190,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1653,
-								1653
+								1886,
+								1886
 							]
 						],
 						"settings":
@@ -1711,7 +1735,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 539.0,
+						"translation.y": 959.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1723,15 +1747,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5729,
+						"buffer_size": 6414,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5386,
-								5386
+								268,
+								268
 							]
 						],
 						"settings":
@@ -1847,7 +1871,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1912,6 +1936,14 @@
 		"selected_items":
 		[
 			[
+				"read",
+				"README.md"
+			],
+			[
+				"data",
+				"data\\dicts\\dictionaries.json"
+			],
+			[
 				"re",
 				"README.md"
 			],
@@ -1937,7 +1969,7 @@
 		[
 			[
 				"",
-				"C:\\Users\\Jonatan\\Desktop\\The Synthesis Project\\Synthesis.sublime-workspace"
+				"C:\\Users\\Jonatan\\Desktop\\Python\\projects\\Newtonian\\Newtonian.sublime-project"
 			]
 		],
 		"width": 380.0

@@ -45,7 +45,7 @@
 		"iso": "es-es",
 		"desc": null,
 
-		"characters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+		"characters": "ABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚÜ",
 
 		"auth": "Jonatan Sundqvist",
 		"src": null,
