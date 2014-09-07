@@ -1,2 +1,3 @@
 *.sublime-workspace
 __pycache__/
+data/flags/originals
