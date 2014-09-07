@@ -7,6 +7,9 @@
 
 # TODO | - Dictionary databases (sqlite3, JSON?)
 #		 	-- Logophile class (?)
+#		 	-- Dynamic wordlists (generators, BeautifulSoup?)
+#		 	-- Lazy selects (saves RAM)
+#
 #		 - Validate input
 #		 	-- words (length, characters, Total - Unique ≥ Chances,  etc.)
 #		 	-- annotations (?)
@@ -21,7 +24,7 @@
 #		 	-- Optional verbose logging (...)
 #		 - Refactor
 #		 - Think about overall architecture (cf. MVC)
-#		 	-- Create class (...)
+#		 	-- Create logic class (...)
 #		 	-- Create input class (?)
 #		 - Disable console in release version
 #		 - Hints (...)
@@ -43,8 +46,9 @@
 #		 - Look into function annotations (optional type checking?)
 #		 	-- cf. inspect.getarcspec
 #		 - PyQT (?)
+#		 - Fix geometry bug caused by menubar (Canvas overflows the window) (✓)
 #		 - Fix noticeable resize delay (hide window?)
-
+#		 - Make dictionaries appear in menu automatically (✓)
 
 # SPEC | -
 #		 - 
@@ -121,11 +125,10 @@ class Hangman:
 		self.bindEvents()
 
 		# Game play
-		# TODO: Fix geometry bug caused by menubar (Canvas overflows the window)
-		self.graphics = Graphics(self.root, *self.size, characterSet=self.characterSet) # TODO: Fix this temporary layout hack (✓)
-		self.logic 	  = Logic(self.graphics.chances)			#
-		self.wordFeed = self.createWordFeed(self.DICT.get()) 	# TODO: Make dictionaries appear in menu automatically (...)
-		self.chances  = self.graphics.chances 					# Initial number of chances for each round
+		self.graphics = Graphics(self.root, *self.size, characterSet=self.characterSet)	#
+		self.logic 	  = Logic(self.graphics.chances)									#
+		self.wordFeed = self.createWordFeed(self.DICT.get()) 							# 
+		self.chances  = self.graphics.chances 											# Initial number of chances for each round
 
 		self.word = None
 		self.hint = None
@@ -143,7 +146,6 @@ class Hangman:
 	def createWindow(self, size):
 		''' '''
 		root = tk.Tk()
-		#root.geometry('%dx%d' % size) # NOTE: Setting window size explicitly causes the canvas to overflow vertically
 		root.resizable(width=False, height=False)
 		root.title('Hangman')
 
@@ -151,6 +153,7 @@ class Hangman:
 
 
 	def createMenus(self):
+
 		''' '''
 
 		# TODO: Nested dict or JSON menu definition (?)
@@ -272,6 +275,7 @@ class Hangman:
 	# TOOD: Check if ST3 has support for the same
 	#def guess(self : str, letter : str) -> None:
 	def guess(self, letter):
+		
 		''' Guesses one letter '''
 
 		# TODO: Write a slightly more helpful docstring
@@ -281,9 +285,9 @@ class Hangman:
 		
 		self.log('\'%s\' is a %s!' % (letter.upper(), result))
 
-		# TODO: Clean up the 'switch' logic
 		self.graphics.guess(letter, result in ('MATCH', 'WIN'), str(self.logic)), # TODO: Let Graphics take care of the representation for us (?)
 		
+		# TODO: Clean up the 'switch' logic
 		#{'WIN': self.win, 'LOSE': self.lose}.get(result, lambda: None)()
 		
 		if result == 'WIN':
