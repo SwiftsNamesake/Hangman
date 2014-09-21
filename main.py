@@ -9,6 +9,11 @@
 #		 	-- Logophile class (?)
 #		 	-- Dynamic wordlists (generators, BeautifulSoup?)
 #		 	-- Lazy selects (saves RAM)
+#		 	-- Error handling (eg. skipping and reporting invalid entries)
+#		 	-- Implement difficulty-based scores
+#
+#		 - Add more language games
+#		 	-- Name that thing
 #
 #		 - Validate input
 #		 	-- words (length, characters, Total - Unique ≥ Chances,  etc.)
@@ -18,37 +23,54 @@
 #		 	-- Treat some characters as equivalent (eg. accented characters)
 #		 	-- Inputting non-keyboard characters
 #		 	-- Resolve case inconsistencies across modules (...)
+#
 #		 - Complete and thorough documentation (tutorial, rule book, readme?)
+#
 #		 - Robustness, debugging, error handling
 #		 	-- Dependency check
 #		 	-- Optional verbose logging (...)
+#
 #		 - Refactor
+#
 #		 - Think about overall architecture (cf. MVC)
 #		 	-- Create logic class (...)
 #		 	-- Create input class (?)
+#
 #		 - Disable console in release version
 #		 - Hints (...)
+#
 #		 - Proper UI, menus (...)
 #		 	-- Generic variable trace closures (decorator?)
 #		 	-- Language flags (✓)
 #		 	-- Timers, progress bars (?)
+#
 #		 - Add quit method (sys.exit?)
 #		 - Statistics, difficulty, profiles, remember state
 #		 - Decide if chances should be determined by graphics
+#
 #		 - Loading settings (JSON?)
 #		 	-- Extract settings from createMenu, hook up menu items to settings (...)
 #		 	-- Implement setting files, extract strings, allow different UI languages
+#		 	-- Remember previous sessions, users, preferences
+#
 #		 - Learn Git, move Hangman class to Hangman.py (...)
+#
 #		 - Improve asset management
 #		 	-- Making it less fragile by storing location of each asset type
 #		 	-- Separate module, or atleast a set of utility functions
+#
 #		 - Look into class decorators (cf. logging)
+#
 #		 - Look into function annotations (optional type checking?)
 #		 	-- cf. inspect.getarcspec
+#
 #		 - PyQT (?)
 #		 - Fix geometry bug caused by menubar (Canvas overflows the window) (✓)
 #		 - Fix noticeable resize delay (hide window?)
 #		 - Make dictionaries appear in menu automatically (✓)
+
+#		 - Gameplay enhancements
+#		 	-- Countdown, speed bonuses
 
 # SPEC | -
 #		 - 
@@ -83,13 +105,18 @@ class Hangman:
 	The original intent was to let it serve
 	as a model-view controller, were Logic
 	represented the model and Graphics the
-	the main view.
+	main view.
 
 	'''
 
 	def __init__(self):
 
-		''' '''
+		'''
+		Initializes window, canvas, gameplay options and menus,
+		loads resources (settings, images, dictionaries) and
+		and sets up debugging.
+
+		'''
 
 		# Window
 		self.size = Size(650, 650)
@@ -125,26 +152,30 @@ class Hangman:
 		self.bindEvents()
 
 		# Game play
-		self.graphics = Graphics(self.root, *self.size, characterSet=self.characterSet)	#
-		self.logic 	  = Logic(self.graphics.chances)									#
-		self.wordFeed = self.createWordFeed(self.DICT.get()) 							# 
+		self.graphics = Graphics(self.root, *self.size, characterSet=self.characterSet)	# Renderer
+		self.logic 	  = Logic(self.graphics.chances)									# Logic
+		self.wordFeed = self.createWordFeed(self.DICT.get()) 							# Provides a stream of words and hints
 		self.chances  = self.graphics.chances 											# Initial number of chances for each round
 
-		self.word = None
-		self.hint = None
+		self.word = None # Initialized later on
+		self.hint = None # Initialized later on
 
 		# Audio
 		self.effects = self.loadAudio()
 
 
 	def play(self):
-		''' '''
+
+		''' Starts the game '''
+
 		self.restart()
 		self.root.mainloop()
 
 
 	def createWindow(self, size):
-		''' '''
+
+		''' As per the title '''
+
 		root = tk.Tk()
 		root.resizable(width=False, height=False)
 		root.title('Hangman')
@@ -154,7 +185,7 @@ class Hangman:
 
 	def createMenus(self):
 
-		''' '''
+		''' As per the title '''
 
 		# TODO: Nested dict or JSON menu definition (?)
 		# TODO: Desperately needs a clean-up (...)
@@ -175,7 +206,7 @@ class Hangman:
 
 		# TODO: Use appropriate flag
 		for N, name in enumerate(self.dictData.keys()):
-			code = self.dictData[name]['iso'] # Language code is the first to characters in filename
+			code = self.dictData[name]['iso'] # Language code
 			languages.add_radiobutton(label=name, image=self.flags[code], compound='left', var=self.DICT, value=name)
 		else:
 			self.log('Found %d dictionaries.' % (N+1))
@@ -208,10 +239,12 @@ class Hangman:
 
 
 	def onKeyDown(self, event):
-		''' '''
+
+		''' Responds to key presses '''
 		
 		# TODO: Make sure guesses can't be made in a transitory state (✓)
 		# TODO: Tidy up
+		# TODO: Shortcuts, key bindings with JSON (?)
 		# Validate the guess
 
 		# Make sure the game is in a valid state (eg. not between to rounds)
@@ -225,8 +258,8 @@ class Hangman:
 
 
 	def about(self):
-		''' Show an about box '''
-		messagebox.askyesno('About', 'Hangman\nJonatan H Sundqvist\nJuly 2014')
+		''' Shows an about box '''
+		messagebox.askokcancel('About', 'Hangman\nJonatan H Sundqvist\nJuly 2014')
 
 
 	def loadAudio(self):
