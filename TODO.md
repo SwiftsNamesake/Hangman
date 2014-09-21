@@ -1,19 +1,19 @@
 graphics.py  
 -----------  
   
-[**[60]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L60 "View") Extract defaults (?)  
-[**[75]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L75 "View") Wrapping, adapting to Canvas size  
-[**[76]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L76 "View") Extract layout parameters (no hard-coded values)  
-[**[89]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L89 "View") Make it flexible, varargs, kwargs (?)  
-[**[110]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L110 "View") Extract hard-coded coordinates and simplify (helper functions?) (✓)  
-[**[175]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L175 "View") Make sure this stays up to date  
-[**[210]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L210 "View") Margin, padding, etc. (...)  
-[**[211]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L211 "View") Itertools, chain, zip, etc.  
-[**[212]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L212 "View") Generic layout and character handling (...)  
-[**[229]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L229 "View") Use tags and helper function (?)  
-[**[255]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L255 "View") Make generic (cf. setHint)  
-[**[261]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L261 "View") Make generic (cf. setHint)  
-[**[266]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L266 "View") Extract to separate method (?)  
+[**[65]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L65 "View") Extract defaults (?)  
+[**[80]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L80 "View") Wrapping, adapting to Canvas size  
+[**[81]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L81 "View") Extract layout parameters (no hard-coded values)  
+[**[94]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L94 "View") Make it flexible, varargs, kwargs (?)  
+[**[115]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L115 "View") Extract hard-coded coordinates and simplify (helper functions?) (✓)  
+[**[180]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L180 "View") Make sure this stays up to date  
+[**[215]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L215 "View") Margin, padding, etc. (...)  
+[**[216]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L216 "View") Itertools, chain, zip, etc.  
+[**[217]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L217 "View") Generic layout and character handling (...)  
+[**[234]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L234 "View") Use tags and helper function (?)  
+[**[260]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L260 "View") Make generic (cf. setHint)  
+[**[266]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L266 "View") Make generic (cf. setHint)  
+[**[271]**](https://github.com/SwiftsNamesake/Hangman/blob/master/graphics.py#L271 "View") Extract to separate method (?)  
   
 Hangman.py  
 ----------  
@@ -50,39 +50,37 @@ logic.py
 --------  
   
 [**[78]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L78 "View") Find a more appropriate name  
-[**[89]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L89 "View") Deal with repeated guesses, winning and losing (...)  
-[**[90]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L90 "View") Add docstring  
-[**[91]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L91 "View") Explain return valus (Enums?)  
-[**[92]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L92 "View") Return multiple values (eg. 'MATCH|WIN' or 'MISS|LOSE') (?)  
-[**[133]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L133 "View") Use str.replace instead (?)  
-[**[146]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L146 "View") Extract case-insensitive logic (?)  
-[**[157]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L157 "View") Different categories (eg. error, log, feedback)  
-[**[167]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L167 "View") Create a more complete representation instead, including ancillary data (?) (✓)  
+[**[90]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L90 "View") Deal with repeated guesses, winning and losing (...)  
+[**[91]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L91 "View") Add docstring  
+[**[92]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L92 "View") Explain return valus (Enums?)  
+[**[93]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L93 "View") Return multiple values (eg. 'MATCH|WIN' or 'MISS|LOSE') (?)  
+[**[134]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L134 "View") Use str.replace instead (?)  
+[**[147]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L147 "View") Extract case-insensitive logic (?)  
+[**[158]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L158 "View") Different categories (eg. error, log, feedback)  
+[**[168]**](https://github.com/SwiftsNamesake/Hangman/blob/master/logic.py#L168 "View") Create a more complete representation instead, including ancillary data (?) (✓)  
   
 main.py  
 -------  
   
-[**[112]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L112 "View") Save reference to current dict (?)  
-[**[123]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L123 "View") Fix geometry bug caused by menubar (Canvas overflows the window)  
-[**[157]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L157 "View") Nested dict or JSON menu definition (?)  
-[**[158]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L158 "View") Desperately needs a clean-up (...)  
-[**[174]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L174 "View") Use appropriate flag  
-[**[211]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L211 "View") Make sure guesses can't be made in a transitory state (✓)  
-[**[212]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L212 "View") Tidy up  
-[**[256]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L256 "View") Dot notation  
-[**[257]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L257 "View") Load associated resources for convenience (?)  
-[**[271]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L271 "View") Research Python annotation syntax  
-[**[277]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L277 "View") Write a slightly more helpful docstring  
-[**[278]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L278 "View") Clean this up  
-[**[284]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L284 "View") Clean up the 'switch' logic  
-[**[298]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L298 "View") Make this configurable (list of requirements?)  
-[**[329]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L329 "View") Show correct word before restarting (?)  
-[**[356]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L356 "View") Find a way to close Python  
-[**[362]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L362 "View") Give class a reference to words (?)  
-[**[363]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L363 "View") Wise to hard-code path (?)  
-[**[364]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L364 "View") Handle incorrectly structured dictionaries  
-[**[374]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L374 "View") Make instance-setting (✓)  
-[**[375]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L375 "View") Different categories (eg. error, log, feedback)  
+[**[145]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L145 "View") Save reference to current dict (?)  
+[**[191]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L191 "View") Nested dict or JSON menu definition (?)  
+[**[192]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L192 "View") Desperately needs a clean-up (...)  
+[**[208]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L208 "View") Use appropriate flag  
+[**[246]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L246 "View") Make sure guesses can't be made in a transitory state (✓)  
+[**[247]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L247 "View") Tidy up  
+[**[248]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L248 "View") Shortcuts, key bindings with JSON (?)  
+[**[293]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L293 "View") Dot notation  
+[**[294]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L294 "View") Load associated resources for convenience (?)  
+[**[308]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L308 "View") Research Python annotation syntax  
+[**[315]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L315 "View") Write a slightly more helpful docstring  
+[**[316]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L316 "View") Clean this up  
+[**[324]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L324 "View") Clean up the 'switch' logic  
+[**[337]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L337 "View") Make this configurable (list of requirements?)  
+[**[368]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L368 "View") Show correct word before restarting (?)  
+[**[395]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L395 "View") Find a way to close Python  
+[**[402]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L402 "View") Give class a reference to words (?)  
+[**[403]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L403 "View") Wise to hard-code path (?)  
+[**[404]**](https://github.com/SwiftsNamesake/Hangman/blob/master/main.py#L404 "View") Handle incorrectly structured dictionaries  
   
 SwiftUtils.py  
 -------------  
@@ -103,28 +101,30 @@ SwiftUtils.py
 utilities.py  
 ------------  
   
-[**[31]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L31 "View") Use named tuples (?) (✓)  
-[**[32]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L32 "View") Explain the arguments more thoroughly, allow for flexibility  
-[**[43]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L43 "View") Clarify meaning of variables and arguments (illustration?)  
-[**[44]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L44 "View") Flexible arguments, error handling, validation  
-[**[45]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L45 "View") Move to SwiftUtils (?)  
-[**[46]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L46 "View") Use named tuples (?)  
-[**[82]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L82 "View") Make instance-setting (✓)  
-[**[83]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L83 "View") Different categories (eg. error, log, feedback)  
-[**[94]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L94 "View") Use tk.Text as a base instead (?)  
-[**[96]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L96 "View") Callbacks  
-[**[97]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L97 "View") Animation (colours, movement, curves, etc.)  
-[**[98]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L98 "View") Apply styles to different regions  
-[**[99]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L99 "View") String manipulations (indeces, replace, regex, etc.)  
-[**[100]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L100 "View") Rename (?)  
-[**[134]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L134 "View") Use complex numbers instead (?)  
-[**[151]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L151 "View") Animate properties other than Canvas styles (eg. size, position)  
-[**[152]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L152 "View") Use generators (?)  
-[**[153]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L153 "View") Root argument necessary (?)  
-[**[154]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L154 "View") Non-numeric ranges  
-[**[155]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L155 "View") Disallow multiple properties (?)  
-[**[156]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L156 "View") Non-equal durations  
-[**[165]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L165 "View") Convert to int (?)  
-[**[185]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L185 "View") Rename to createFrames and return list of frames instead (?)  
-[**[201]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L201 "View") Use yield from (?)  
+[**[33]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L33 "View") Use named tuples (?) (✓)  
+[**[34]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L34 "View") Explain the arguments more thoroughly, allow for flexibility  
+[**[45]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L45 "View") Clarify meaning of variables and arguments (illustration?)  
+[**[46]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L46 "View") Flexible arguments, error handling, validation  
+[**[47]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L47 "View") Move to SwiftUtils (?)  
+[**[48]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L48 "View") Use named tuples (?)  
+[**[82]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L82 "View") Allow for some flexibility  
+[**[83]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L83 "View") Make it a decorator (?)  
+[**[87]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L87 "View") Make instance-setting (✓)  
+[**[88]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L88 "View") Different categories (eg. error, log, feedback)  
+[**[101]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L101 "View") Use tk.Text as a base instead (?)  
+[**[103]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L103 "View") Callbacks  
+[**[104]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L104 "View") Animation (colours, movement, curves, etc.)  
+[**[105]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L105 "View") Apply styles to different regions  
+[**[106]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L106 "View") String manipulations (indeces, replace, regex, etc.)  
+[**[107]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L107 "View") Rename (?)  
+[**[141]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L141 "View") Use complex numbers instead (?)  
+[**[158]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L158 "View") Animate properties other than Canvas styles (eg. size, position)  
+[**[159]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L159 "View") Use generators (?)  
+[**[160]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L160 "View") Root argument necessary (?)  
+[**[161]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L161 "View") Non-numeric ranges  
+[**[162]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L162 "View") Disallow multiple properties (?)  
+[**[163]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L163 "View") Non-equal durations  
+[**[172]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L172 "View") Convert to int (?)  
+[**[192]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L192 "View") Rename to createFrames and return list of frames instead (?)  
+[**[208]**](https://github.com/SwiftsNamesake/Hangman/blob/master/utilities.py#L208 "View") Use yield from (?)  
   

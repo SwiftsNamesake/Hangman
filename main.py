@@ -43,6 +43,7 @@
 #		 	-- Generic variable trace closures (decorator?)
 #		 	-- Language flags (✓)
 #		 	-- Timers, progress bars (?)
+#		 	-- Console option in Dev menu (async, exec with main.py locals)
 #
 #		 - Add quit method (sys.exit?)
 #		 - Statistics, difficulty, profiles, remember state
@@ -68,7 +69,13 @@
 #		 - Fix geometry bug caused by menubar (Canvas overflows the window) (✓)
 #		 - Fix noticeable resize delay (hide window?)
 #		 - Make dictionaries appear in menu automatically (✓)
-
+#
+#		 - Animated Main Menu
+#
+#		 - Spruce up graphics
+#		 	-- SDL, Pyglet, Pygame
+#		 	-- Animated background and foreground, music
+#
 #		 - Gameplay enhancements
 #		 	-- Countdown, speed bonuses
 
@@ -322,6 +329,7 @@ class Hangman:
 		
 		# TODO: Clean up the 'switch' logic
 		#{'WIN': self.win, 'LOSE': self.lose}.get(result, lambda: None)()
+		# return { ('MATCH', 'WIN'):  }
 		
 		if result == 'WIN':
 			self.win()
