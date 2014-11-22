@@ -115,7 +115,7 @@ class Hangman:
 	resources.
 
 	The original intent was to let it serve
-	as a model-view controller, were Logic
+	as a model-view controller, where Logic
 	represented the model and Graphics the
 	main view.
 
