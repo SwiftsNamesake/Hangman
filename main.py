@@ -78,6 +78,8 @@
 #
 #		 - Gameplay enhancements
 #		 	-- Countdown, speed bonuses
+#
+#		 - Revamp, replace, or retouch the icon
 
 # SPEC | -
 #		 - 
@@ -99,6 +101,9 @@ from collections import namedtuple	# Probably not needed anymore (moved to utili
 from random import choice			# Choosing words (should eventually be superseded by database queries)
 from pygame import mixer			# Audio (NOTE: 3rd party, bundle with game?)
 from os import listdir 				# Finding and loading dictionaries
+
+from SwiftUtils.SwiftUtils import Logger
+
 
 
 class Hangman:
@@ -128,7 +133,7 @@ class Hangman:
 		# Window
 		self.size = Size(650, 650)
 		self.root = self.createWindow(self.size)
-		self.icon = self.loadIcon('icon.ico')
+		self.icon = self.loadIcon('icon.png')
 
 		# Internal settings
 		self.validState = False 						# Not ready to accept guesses
@@ -137,7 +142,7 @@ class Hangman:
 
 		# Logging
 		self.messages 	= []
-		self.log 		= createLogger('Hangman', self.DEBUG, self.messages)
+		self.logger = Logger('Hangman')
 
 		# Resources
 		self.dictData 	= self.loadDictionaries('data/dicts/dictionaries.json')
@@ -216,7 +221,7 @@ class Hangman:
 			code = self.dictData[name]['iso'] # Language code
 			languages.add_radiobutton(label=name, image=self.flags[code], compound='left', var=self.DICT, value=name)
 		else:
-			self.log('Found %d dictionaries.' % (N+1))
+			self.logger.log('Found %d dictionaries.' % (N+1), kind='log')
 
 		settings.add_cascade(label='Language', menu=languages)
 		menubar.add_cascade(label='Settings', menu=settings)
@@ -256,7 +261,7 @@ class Hangman:
 
 		# Make sure the game is in a valid state (eg. not between to rounds)
 		if not self.validState:
-			self.log('Cannot accept guesses right now')
+			self.logger.log('Cannot accept guesses right now', kind='log')
 			return
 		elif not self.validGuess(event.char):
 			return
@@ -283,6 +288,7 @@ class Hangman:
 		for iso, fn in codes:
 			image = Image.open('data/flags/%s' % fn)
 			image.thumbnail((16,16), Image.ANTIALIAS)
+			
 			flags[iso] = ImageTk.PhotoImage(image)
 		return flags
 
@@ -304,7 +310,7 @@ class Hangman:
 
 	def setDictionary(self, name):
 		''' Sets the dictionary specified by the name and restarts '''
-		self.log('Changing dictionary to %s' % name)
+		self.logger.log('Changing dictionary to %s' % name, kind='log')
 		self.wordFeed = self.createWordFeed(name)
 		self.characterSet = self.dictData[name]['characters']
 		self.graphics.changeCharacterSet(self.characterSet)
@@ -321,7 +327,7 @@ class Hangman:
 		# TODO: Write a slightly more helpful docstring
 		# TODO: Clean this up
 
-		result = self.logic.guess(letter)
+		result = self.logger.logic.guess(letter, kind='log')
 		
 		self.log('\'%s\' is a %s!' % (letter.upper(), result))
 
@@ -385,7 +391,7 @@ class Hangman:
 
 	def restart(self):
 		''' Starts a new game '''
-		self.log('\n{0}\n{1:^40}\n{0}\n'.format('-'*40, 'NEW GAME'), identify=False)
+		self.logger.log('\n{0}\n{1:^40}\n{0}\n'.format('-'*40, 'NEW GAME'), kind='log', identify=False) # TODO: Enable identify options in Logger.log
 
 		self.word, self.hint = next(self.wordFeed)
 		self.graphics.showHint(self.hint)
@@ -408,6 +414,7 @@ class Hangman:
 		# TODO: Give class a reference to words (?)
 		# TODO: Wise to hard-code path (?)
 		# TODO: Handle incorrectly structured dictionaries
+		self.logger.log('Creating word feed from {name}.'.format(name=name), kind='log')
 		fn = self.dictData[name]['file']
 		with open('data/dicts/%s' %  fn, 'r', encoding='utf-8') as wordFile:
 			words = wordFile.read().split('\n')

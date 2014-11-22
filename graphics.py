@@ -13,6 +13,7 @@
 #		 - Event handling facilities
 #		 - Create separate Text class with individually configurable letters (?)
 #		 - Allow for generic characterSets (...)
+#
 
 # SPEC | - Terminology
 #		 	-- Word object: (internally a namedtuple wrapping a Canvas id) (should be renamed)

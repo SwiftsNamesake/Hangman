@@ -1,2 +1,4 @@
-Rörelsemoment|Massa fart
+Rörelsemängd|Massa fart
 Normalkraft|Därför faller vi inte genom marken
+Acceleration|Vad i helvete är en sekundkvadrat?
+Centripetalkraft|Tänk slänggunga
