@@ -85,6 +85,7 @@
 #		 - 
 
 
+
 import tkinter as tk # Window creation and event handling
 import json 		 # Loading settings and meta data
 
@@ -125,7 +126,7 @@ class Hangman:
 
 		'''
 		Initializes window, canvas, gameplay options and menus,
-		loads resources (settings, images, dictionaries) and
+		loads resources (settings, images, dictionaries)
 		and sets up debugging.
 
 		'''
@@ -327,9 +328,9 @@ class Hangman:
 		# TODO: Write a slightly more helpful docstring
 		# TODO: Clean this up
 
-		result = self.logger.logic.guess(letter, kind='log')
+		result = self.logic.guess(letter)
 		
-		self.log('\'%s\' is a %s!' % (letter.upper(), result))
+		self.logger.log('\'%s\' is a %s!' % (letter.upper(), result), kind='log')
 
 		self.graphics.guess(letter, result in ('MATCH', 'WIN'), str(self.logic)), # TODO: Let Graphics take care of the representation for us (?)
 		
@@ -354,15 +355,15 @@ class Hangman:
 		# Check all requirements
 		if letter not in self.characterSet:
 			# Make sure the character is a guessable letter
-			self.log('\'%s\' is not in the character set!' % letter)
+			self.logger.log('\'%s\' is not in the character set!' % letter, kind='log')
 			return False
 		elif len(letter) != 1:
 			# Make sure the guess is only one letter
-			self.log('\'%s\' does not have exactly one letter!' % letter)
+			self.logger.log('\'%s\' does not have exactly one letter!' % letter, kind='log')
 			return False
 		elif self.logic.hasGuessed(letter):
 			# Make sure it's not a repeat guess
-			self.log('\'%s\' has already been guessed!' % letter)
+			self.logger.log('\'%s\' has already been guessed!' % letter, kind='log')
 			return False
 		else:
 			return True
@@ -370,7 +371,7 @@ class Hangman:
 
 	def win(self):
 		''' Victorious feedback, schedules the next round '''
-		self.log('Phew. You figured it out!')
+		self.logger.log('Phew. You figured it out!', kind='log')
 		self.effects.win.play()
 		self.scheduleRestart()
 	
@@ -378,8 +379,10 @@ class Hangman:
 	def lose(self):
 		''' Failure feedback, schedules the next round '''
 		# TODO: Show correct word before restarting (?)
-		self.log('You\'ve been hanged. Requiescat in pace!')
+		self.logger.log('You\'ve been hanged. Requiescat in pace!', kind='log')
 		self.effects.lose.play()
+		if self.revealWhenLost:
+			self.graphics.setWord(self.word) # Reveal answer
 		self.scheduleRestart()
 
 
@@ -414,12 +417,19 @@ class Hangman:
 		# TODO: Give class a reference to words (?)
 		# TODO: Wise to hard-code path (?)
 		# TODO: Handle incorrectly structured dictionaries
-		self.logger.log('Creating word feed from {name}.'.format(name=name), kind='log')
+		self.logger.log('Creating word feed from \'{name}\'.'.format(name=name), kind='log')
 		fn = self.dictData[name]['file']
 		with open('data/dicts/%s' %  fn, 'r', encoding='utf-8') as wordFile:
 			words = wordFile.read().split('\n')
 		while True:
-			yield choice(words).split('|') # Word|Hint
+			try:
+				line = choice(words)
+				word, hint = line.split('|') # Word|Hint
+				yield word, hint
+			except ValueError as e:
+				words.remove(line) # Remove the culprit from the word feed
+				self.logger.log('Removing invalid definition ({0}).'.format(line), kind='error')
+
 
 
 

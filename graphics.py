@@ -49,7 +49,7 @@ class Graphics:
 		'''
 		
 		# Initialize
-		self.canvas = tk.Canvas(width=width, height=height, background='white')
+		self.canvas = tk.Canvas(width=width, height=height, background='#D5FDF4')
 		self.canvas.pack()
 		self.size = Size(width, height)
 
